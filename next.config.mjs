@@ -2,12 +2,13 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      domains: ['your-domain.com'],
+      domains: ['your-domain.com', 'cdn.sanity.io'],
       deviceSizes: [640, 750, 828, 1080, 1200],
       imageSizes: [16, 32, 48, 64, 96],
     },
     experimental: {
       optimizeCss: true,
+      esmExternals: 'loose',
     },
     async headers() {
       return [
