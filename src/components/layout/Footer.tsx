@@ -86,7 +86,12 @@ const Footer = () => {
   );
 };
 
-const FooterLink = ({ href, text }) => (
+interface FooterLinkProps {
+  href: string;
+  text: string;
+}
+
+const FooterLink = ({ href, text }: FooterLinkProps) => (
   <Link 
     href={href} 
     className="block text-slate-400 hover:text-white transition-colors duration-300"
@@ -95,7 +100,12 @@ const FooterLink = ({ href, text }) => (
   </Link>
 );
 
-const SocialLink = ({ href, icon }) => (
+interface SocialLinkProps {
+  href: string;
+  icon: React.ReactNode;
+}
+
+const SocialLink = ({ href, icon }: SocialLinkProps) => (
   <a 
     href={href}
     target="_blank"
@@ -106,7 +116,12 @@ const SocialLink = ({ href, icon }) => (
   </a>
 );
 
-const ContactInfo = ({ icon, text }) => (
+interface ContactInfoProps {
+  icon: React.ReactNode;
+  text: string;
+}
+
+const ContactInfo = ({ icon, text }: ContactInfoProps) => (
   <div className="flex items-start space-x-3 text-slate-400">
     <span className="mt-1">{icon}</span>
     <span>{text}</span>
