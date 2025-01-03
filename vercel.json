@@ -1,0 +1,36 @@
+{
+    "version": 2,
+    "buildCommand": "next build",
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/next",
+        "config": {
+          "maxDuration": 10,
+          "memory": 1024
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "headers": {
+          "cache-control": "s-maxage=0"
+        },
+        "continue": true
+      },
+      {
+        "src": "/(.*)",
+        "headers": {
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "continue": true
+      }
+    ],
+    "github": {
+      "silent": true,
+      "autoAlias": false
+    }
+  }
