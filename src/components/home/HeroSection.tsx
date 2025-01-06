@@ -1,19 +1,13 @@
+'use client'
+
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(13,148,136,0.1),rgba(13,148,136,0))]" />
-        <div className="absolute right-0 top-0 w-1/2 h-1/2 bg-[linear-gradient(135deg,rgba(139,92,246,0.05),rgba(244,63,94,0.05))]" />
-        {/* Additional decorative elements */}
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[linear-gradient(135deg,rgba(13,148,136,0.05),rgba(13,148,136,0))]" />
-      </div>
-
+    <section className="relative pt-20"> {/* Changed from min-h-screen to pt-20 */}
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-80px)] flex items-center">
         <div className="max-w-4xl">
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="text-teal-400 h-5 w-5" />
@@ -45,9 +39,6 @@ const HeroSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent" />
     </section>
   );
 };

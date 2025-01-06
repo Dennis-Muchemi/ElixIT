@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Award } from 'lucide-react';
+import Image from 'next/image'
 
 const ClientSuccessSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -72,10 +75,12 @@ const ClientSuccessSection = () => {
                         {testimonial.content}
                       </p>
                       <div className="flex items-center gap-4">
-                        <img 
+                        <Image 
                           src={testimonial.avatar} 
                           alt={testimonial.name}
                           className="w-12 h-12 rounded-full object-cover"
+                          width={100}
+                          height={100}
                         />
                         <div>
                           <div className="font-bold text-slate-900">{testimonial.name}</div>
@@ -133,7 +138,13 @@ const ClientSuccessSection = () => {
               key={index}
               className="group p-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 transform hover:-translate-y-1"
             >
-              <img src={logo} alt="Client Logo" className="w-full h-12 object-contain" />
+              <Image 
+                src={logo} 
+                alt="Client Logo"
+                className="w-full h-12 object-contain"
+                width={200}
+                height={100}
+              />
             </div>
           ))}
         </div>
@@ -171,11 +182,11 @@ const testimonials = [
 ];
 
 const clientLogos = [
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100"
+  "https://placehold.co/200x100",
+  "https://placehold.co/200x100",
+  "https://placehold.co/200x100",
+  "https://placehold.co/200x100",
+  "https://placehold.co/200x100"
 ];
 
 export default ClientSuccessSection;

@@ -39,7 +39,7 @@ export const urlForImage = (source: SanityImageSource) => {
 // Type-safe document fetching with caching configuration
 export const fetchQuery = async <T>(
   query: string,
-  params: Record<string, any> = {},
+  params: Record<string, unknown> = {},
   usePreview = false
 ): Promise<T> => {
   try {
@@ -51,4 +51,11 @@ export const fetchQuery = async <T>(
     console.error('Sanity query error:', error)
     throw new Error('Failed to fetch data from Sanity')
   }
+}
+
+// Replace any with specific type
+export interface SanityDocument {
+  _id: string;
+  _type: string;
+  [key: string]: unknown;
 }

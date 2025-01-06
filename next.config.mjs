@@ -5,10 +5,15 @@ const nextConfig = {
       domains: ['your-domain.com', 'cdn.sanity.io'],
       deviceSizes: [640, 750, 828, 1080, 1200],
       imageSizes: [16, 32, 48, 64, 96],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'placehold.co',
+        },
+      ],
     },
     experimental: {
       optimizeCss: true,
-      esmExternals: 'loose',
     },
     async headers() {
       return [

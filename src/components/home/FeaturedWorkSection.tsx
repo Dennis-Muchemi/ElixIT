@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { ArrowUpRight, Trophy } from 'lucide-react';
 
@@ -104,7 +106,7 @@ const projects = [
   {
     title: "E-commerce Revolution",
     category: "E-commerce",
-    image: "/api/placeholder/800/600",
+    image: "https://placehold.co/800x600",
     description: "A complete digital transformation for a leading retail brand, resulting in 200% increase in online sales.",
     stats: [
       { value: "200%", label: "Growth" },
@@ -115,7 +117,7 @@ const projects = [
   {
     title: "FinTech Innovation",
     category: "Web Application",
-    image: "/api/placeholder/800/600",
+    image: "https://placehold.co/800x600",
     description: "Modern banking platform with advanced security features and seamless user experience.",
     stats: [
       { value: "500K", label: "Users" },
@@ -126,7 +128,7 @@ const projects = [
   {
     title: "Healthcare Platform",
     category: "Mobile App",
-    image: "/api/placeholder/800/600",
+    image: "https://placehold.co/800x600",
     description: "Revolutionary healthcare management system connecting patients with healthcare providers.",
     stats: [
       { value: "1M+", label: "Users" },
@@ -137,7 +139,7 @@ const projects = [
   {
     title: "Educational Tech",
     category: "Web Platform",
-    image: "/api/placeholder/800/600",
+    image: "https://placehold.co/800x600",
     description: "Interactive learning platform making education accessible to millions worldwide.",
     stats: [
       { value: "2M+", label: "Students" },

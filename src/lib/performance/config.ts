@@ -1,3 +1,5 @@
+'use client'
+
 import { onLCP, onFID, onCLS, Metric } from 'web-vitals'
 import { trackWebVitals } from '../analytics/config'
 import React from 'react'
@@ -32,7 +34,6 @@ export const reportWebVitals = (metric: Metric) => {
   trackWebVitals({
     id: metric.id,
     name: metric.name,
-    label: metric.name,
     value: metric.value,
   })
 }
@@ -53,6 +54,6 @@ export const withPerformanceMonitoring = (
       measureWebVitals()
     }, [])
 
-    return <WrappedComponent {...props} />
+    return React.createElement(WrappedComponent, props)
   }
 }

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+'use client';
+
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { SpeedInsights } from "@/components/SpeedInsights";
@@ -15,23 +16,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "ElixIT",
-  description: "Transform your business with innovative digital experiences",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
+    <html lang="en" className="bg-slate-900">
+      <head>
+        <meta name="google" content="notranslate" />
+      </head>
+      <body 
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
-        {children}
-        <Suspense fallback={null}>
+        <Suspense>
+          {children}
           <Analytics />
           <SpeedInsights />
         </Suspense>

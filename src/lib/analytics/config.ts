@@ -1,7 +1,7 @@
 declare global {
     interface Window {
-      gtag: (...args: any[]) => void
-      dataLayer: any[]
+      dataLayer: unknown[];
+      gtag: (...args: unknown[]) => void;
     }
   }
   
@@ -23,8 +23,8 @@ declare global {
     document.head.appendChild(script)
   
     window.dataLayer = window.dataLayer || []
-    window.gtag = function gtag() {
-      window.dataLayer.push(arguments)
+    window.gtag = function gtag(...args: unknown[]) {
+      window.dataLayer.push(...args)
     }
     window.gtag('js', new Date())
     window.gtag('config', GA_TRACKING_ID, {
@@ -50,17 +50,10 @@ declare global {
   }
   
   // Performance tracking
-  export const trackWebVitals = ({ id, name, label, value }: {
-    id: string
-    name: string
-    label: string
-    value: number
+  export const trackWebVitals = (metric: { 
+    id: string; 
+    name: string; 
+    value: number 
   }) => {
-    window.gtag('event', name, {
-      event_category: 'Web Vitals',
-      event_label: label,
-      value: Math.round(name === 'CLS' ? value * 1000 : value),
-      non_interaction: true,
-      metric_id: id,
-    })
+    window.dataLayer?.push(metric)
   }

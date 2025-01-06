@@ -1,7 +1,27 @@
-import React from 'react';
+'use client'
+
+import React, { useEffect } from 'react'
 import { ArrowRight, Sparkles } from 'lucide-react';
 
-const FinalCTASection = () => {
+export default function FinalCTASection() {
+  useEffect(() => {
+    // Move style creation to client-side
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+    `
+    document.head.appendChild(style)
+
+    // Cleanup
+    return () => {
+      document.head.removeChild(style)
+    }
+  }, [])
+
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background with gradient */}
@@ -25,7 +45,7 @@ const FinalCTASection = () => {
         {/* Decorative label */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-8">
           <Sparkles className="w-4 h-4 text-teal-400" />
-          <span className="text-sm text-white/80 font-medium">Let's Create Something Amazing</span>
+          <span className="text-sm text-white/80 font-medium">Let&apos;s Create Something Amazing</span>
         </div>
 
         {/* Main heading */}
@@ -38,7 +58,7 @@ const FinalCTASection = () => {
 
         {/* Description */}
         <p className="max-w-2xl mx-auto text-lg text-slate-300 mb-12">
-          Join the ranks of successful businesses that have elevated their digital presence with our expertise. Let's start your transformation journey today.
+          Join the ranks of successful businesses that have elevated their digital presence with our expertise. Let&apos;s start your transformation journey today.
         </p>
 
         {/* CTAs */}
@@ -77,7 +97,7 @@ const FinalCTASection = () => {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-500/20 to-transparent" />
     </section>
   );
-};
+}
 
 const trustIndicators = [
   { value: "24/7", label: "Support" },
@@ -85,19 +105,3 @@ const trustIndicators = [
   { value: "14 Day", label: "Delivery" },
   { value: "No Lock-in", label: "Contracts" }
 ];
-
-// Add the float animation to your global CSS or Tailwind config
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-  }
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-`;
-document.head.appendChild(style);
-
-export default FinalCTASection;

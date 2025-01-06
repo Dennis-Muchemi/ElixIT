@@ -44,13 +44,13 @@ export const caches = {
 }
 
 // Cache middleware for API routes
-export const withCache = async (
+export const withCache = async <T extends object>(
   key: string,
-  fetcher: () => Promise<any>,
+  fetcher: () => Promise<T>,
   options: { type: keyof typeof caches } = { type: 'api' }
-) => {
+): Promise<T> => {
   const cache = caches[options.type]
-  const cached = cache.get(key)
+  const cached = cache.get(key) as T | undefined
   
   if (cached) {
     return cached
@@ -59,4 +59,10 @@ export const withCache = async (
   const fresh = await fetcher()
   cache.set(key, fresh)
   return fresh
+}
+
+// Replace any with specific type
+export interface CacheData<T> {
+  data: T;
+  timestamp: number;
 }

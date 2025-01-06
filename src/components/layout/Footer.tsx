@@ -1,8 +1,12 @@
-import React from 'react';
+'use client'
+
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
+  const year = useMemo(() => new Date().getFullYear(), [])
+
   return (
     <footer className="bg-gradient-to-b from-slate-800 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
@@ -69,7 +73,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-slate-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm">
-              © {new Date().getFullYear()} ElixIT. All rights reserved.
+              © {year} ElixIT. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="text-slate-400 hover:text-white text-sm transition-colors duration-300">
