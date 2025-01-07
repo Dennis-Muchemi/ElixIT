@@ -14,7 +14,7 @@ export function CaseStudyFooter({ projectId }: CaseStudyFooterProps) {
     id: '2',
     title: 'Analytics Dashboard',
     category: 'SaaS Platform',
-    image: '/api/placeholder/800/400',
+    image: 'https://placehold.co/800x400',
   };
 
   return (

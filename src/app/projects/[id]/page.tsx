@@ -12,8 +12,7 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-  const id = await params.id;
-  const project = projects.find(p => p.id === parseInt(id));
+  const project = projects.find(p => p.id === parseInt(params.id));
   
   if (!project) {
     notFound();
