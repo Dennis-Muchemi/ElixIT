@@ -2,10 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Award } from 'lucide-react';
-import Image from 'next/image'
+import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 const ClientSuccessSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
 
   // Auto-advance testimonials
   useEffect(() => {
@@ -17,24 +22,67 @@ const ClientSuccessSection = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const nextTestimonial = () => {
+    setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial(prev => 
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stats Grid */}
+    <section 
+      ref={sectionRef}
+      className="py-24 bg-slate-50 relative overflow-hidden"
+    >
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-teal-50 opacity-60 rounded-full blur-3xl"
+          style={{
+            transform: 'translate(25%, -25%) rotate(-5deg)',
+            transition: 'transform 0.7s ease-out',
+          }}
+        />
+        <div 
+          className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-rose-50 opacity-60 rounded-full blur-3xl"
+          style={{
+            transform: 'translate(-25%, 25%) rotate(5deg)',
+            transition: 'transform 0.7s ease-out',
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Stats Grid with fade-in and slide-up animations */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center transform hover:-translate-y-1 transition-transform duration-300"
+              className={`text-center transform transition-all duration-700 hover:-translate-y-1 ${
+                sectionInView 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
+              <div className="text-4xl font-bold text-slate-900 mb-2 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700">
+                {stat.value}
+              </div>
               <div className="text-slate-600">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        {/* Section Header with fade-in animation */}
+        <div 
+          className={`max-w-3xl mx-auto text-center mb-16 transform transition-all duration-700 ${
+            sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+          style={{ transitionDelay: '400ms' }}
+        >
           <div className="flex items-center justify-center gap-2 mb-4">
             <Award className="text-teal-500 h-5 w-5" />
             <span className="text-slate-600 text-sm font-medium uppercase tracking-wider">Client Success</span>
@@ -48,70 +96,65 @@ const ClientSuccessSection = () => {
         </div>
 
         {/* Testimonials Slider */}
-        <div className="max-w-4xl mx-auto mb-20">
+        <div 
+          className={`max-w-4xl mx-auto mb-20 transform transition-all duration-700 ${
+            sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+          style={{ transitionDelay: '600ms' }}
+        >
           <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            {/* Background Pattern */}
+            {/* Background Patterns */}
             <div className="absolute top-0 right-0 -mt-6 -mr-6 w-24 h-24 bg-teal-50 rounded-full opacity-50" />
             <div className="absolute bottom-0 left-0 -mb-6 -ml-6 w-16 h-16 bg-teal-50 rounded-full opacity-50" />
 
             {/* Testimonial Content */}
-            <div className="relative">
-              {/* Quote Icon */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
-                </svg>
-              </div>
-
-              {/* Testimonial Slider */}
-              <div className="relative overflow-hidden">
-                <div 
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
-                >
-                  {testimonials.map((testimonial, index) => (
-                    <div key={index} className="w-full flex-shrink-0">
-                      <p className="text-lg md:text-xl text-slate-600 italic mb-8">
-                        {testimonial.content}
-                      </p>
-                      <div className="flex items-center gap-4">
+            <div className="relative overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <p className="text-lg md:text-xl text-slate-600 italic mb-8">
+                      {testimonial.content}
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-slate-100">
                         <Image 
                           src={testimonial.avatar} 
                           alt={testimonial.name}
-                          className="w-12 h-12 rounded-full object-cover"
-                          width={100}
-                          height={100}
+                          width={48}
+                          height={48}
+                          className="object-cover"
                         />
-                        <div>
-                          <div className="font-bold text-slate-900">{testimonial.name}</div>
-                          <div className="text-slate-600">{testimonial.position}</div>
-                        </div>
-                        <div className="ml-auto flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                          ))}
-                        </div>
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">{testimonial.name}</div>
+                        <div className="text-slate-600">{testimonial.position}</div>
+                      </div>
+                      <div className="ml-auto flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        ))}
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
 
               {/* Navigation Buttons */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0">
-                <button 
-                  onClick={() => setCurrentTestimonial(prev => prev === 0 ? testimonials.length - 1 : prev - 1)}
-                  className="absolute -left-12 p-2 rounded-full bg-white shadow-lg hover:bg-slate-50 transition-colors"
-                >
-                  <ChevronLeft className="w-6 h-6 text-slate-600" />
-                </button>
-                <button 
-                  onClick={() => setCurrentTestimonial(prev => prev === testimonials.length - 1 ? 0 : prev + 1)}
-                  className="absolute -right-12 p-2 rounded-full bg-white shadow-lg hover:bg-slate-50 transition-colors"
-                >
-                  <ChevronRight className="w-6 h-6 text-slate-600" />
-                </button>
-              </div>
+              <button 
+                onClick={prevTestimonial}
+                className="absolute top-1/2 -left-16 transform -translate-y-1/2 p-2 rounded-full bg-white shadow-lg hover:bg-slate-50 transition-colors"
+              >
+                <ChevronLeft className="w-6 h-6 text-slate-600" />
+              </button>
+              <button 
+                onClick={nextTestimonial}
+                className="absolute top-1/2 -right-16 transform -translate-y-1/2 p-2 rounded-full bg-white shadow-lg hover:bg-slate-50 transition-colors"
+              >
+                <ChevronRight className="w-6 h-6 text-slate-600" />
+              </button>
             </div>
           </div>
 
@@ -132,7 +175,12 @@ const ClientSuccessSection = () => {
         </div>
 
         {/* Client Logos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+        <div 
+          className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center transform transition-all duration-700 ${
+            sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+          style={{ transitionDelay: '800ms' }}
+        >
           {clientLogos.map((logo, index) => (
             <div 
               key={index}
@@ -182,11 +230,11 @@ const testimonials = [
 ];
 
 const clientLogos = [
-  "https://placehold.co/200x100",
-  "https://placehold.co/200x100",
-  "https://placehold.co/200x100",
-  "https://placehold.co/200x100",
-  "https://placehold.co/200x100"
+  "/api/placeholder/200/100",
+  "/api/placeholder/200/100",
+  "/api/placeholder/200/100",
+  "/api/placeholder/200/100",
+  "/api/placeholder/200/100"
 ];
 
 export default ClientSuccessSection;

@@ -2,13 +2,23 @@
 
 import React from 'react';
 import { ArrowUpRight, Trophy } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
 
 const FeaturedWorkSection = () => {
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
+        {/* Section Header with animation */}
+        <div 
+          className={`max-w-3xl mb-20 transform transition-all duration-1000 ${
+            sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="flex items-center gap-2 mb-4">
             <Trophy className="text-teal-500 h-5 w-5" />
             <span className="text-slate-600 text-sm font-medium uppercase tracking-wider">Featured Work</span>
@@ -22,18 +32,24 @@ const FeaturedWorkSection = () => {
           </p>
         </div>
 
-        {/* Project Grid */}
+        {/* Project Grid with staggered animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} index={index} />
           ))}
         </div>
 
-        {/* View All Projects Button */}
+        {/* View All Projects Button with hover animation */}
         <div className="text-center mt-16">
-          <button className="group inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-all duration-300 transform hover:-translate-y-0.5">
-            View All Projects
-            <ArrowUpRight className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <button 
+            className="group relative inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg overflow-hidden"
+          >
+            {/* Button background animation */}
+            <div className="absolute inset-0 w-0 bg-teal-600 transition-all duration-[750ms] ease-out group-hover:w-full" />
+            
+            {/* Button content */}
+            <span className="relative">View All Projects</span>
+            <ArrowUpRight className="relative w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </div>
       </div>
@@ -42,33 +58,41 @@ const FeaturedWorkSection = () => {
 };
 
 interface ProjectCardProps {
-    title: string;
-    category: string;
-    image: string;
-    description: string;
-    stats: Array<{ value: string; label: string }>;
-    index: number;
-  }
+  title: string;
+  category: string;
+  image: string;
+  description: string;
+  stats: Array<{ value: string; label: string }>;
+  index: number;
+}
 
 const ProjectCard = ({ title, category, image, description, stats, index }: ProjectCardProps) => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+    delay: index * 200 // Stagger the animations
+  });
+
   return (
     <div 
-      className="group relative bg-slate-50 rounded-2xl overflow-hidden transform transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
-      style={{
-        animationDelay: `${index * 150}ms`,
-      }}
+      ref={ref}
+      className={`group relative bg-slate-50 rounded-2xl overflow-hidden transform transition-all duration-700 hover:shadow-2xl ${
+        inView 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-20'
+      }`}
     >
-      {/* Project Image */}
+      {/* Project Image with parallax effect */}
       <div className="relative h-[300px] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center transform transition-transform duration-700 group-hover:scale-105"
           style={{ backgroundImage: `url(${image})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       {/* Content */}
-      <div className="relative p-8">
+      <div className="relative p-8 bg-white transform transition-transform duration-500 group-hover:translate-y-[-10px]">
         {/* Category Tag */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-50 text-teal-600 text-sm font-medium mb-4">
           {category}
@@ -77,10 +101,16 @@ const ProjectCard = ({ title, category, image, description, stats, index }: Proj
         <h3 className="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
         <p className="text-slate-600 mb-6">{description}</p>
 
-        {/* Project Stats */}
+        {/* Project Stats with sequential fade-in */}
         <div className="flex gap-6 mb-6">
-          {stats.map((stat, index) => (
-            <div key={index} className="group/stat">
+          {stats.map((stat, statIndex) => (
+            <div 
+              key={statIndex}
+              className="group/stat"
+              style={{ 
+                animationDelay: `${(index * 200) + (statIndex * 100)}ms` 
+              }}
+            >
               <div className="text-2xl font-bold text-slate-900 group-hover/stat:text-teal-500 transition-colors">
                 {stat.value}
               </div>
@@ -89,7 +119,7 @@ const ProjectCard = ({ title, category, image, description, stats, index }: Proj
           ))}
         </div>
 
-        {/* View Project Link */}
+        {/* View Project Link with animated arrow */}
         <a 
           href="#" 
           className="inline-flex items-center text-teal-500 hover:text-teal-600 font-medium group/link"

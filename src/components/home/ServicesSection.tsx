@@ -1,57 +1,133 @@
 'use client'
 
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
+import { Code, Palette, Globe, ShoppingCart } from 'lucide-react';
 
-const HeroSection = () => {
+const ServicesSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(13,148,136,0.1),rgba(13,148,136,0))]" />
-        <div className="absolute right-0 top-0 w-1/2 h-1/2 bg-[linear-gradient(135deg,rgba(139,92,246,0.05),rgba(244,63,94,0.05))]" />
-        {/* Additional decorative elements */}
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[linear-gradient(135deg,rgba(13,148,136,0.05),rgba(13,148,136,0))]" />
-      </div>
+    <section className="py-24 bg-white relative">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-48">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-2 mb-6">
-            <Sparkles className="text-teal-400 h-5 w-5" />
-            <span className="text-slate-300 text-sm uppercase tracking-wider">Web Design & Development</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            Transforming Ideas Into{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500">
-              Digital Excellence
-            </span>
-          </h1>
-          
-          <p className="text-xl text-slate-300 mb-12 max-w-2xl">
-            We combine cutting-edge technology with human-centered design to create 
-            digital experiences that drive engagement and deliver exceptional results.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            Transforming Ideas Into
+            <span className="text-teal-600"> Digital Success</span>
+          </h2>
+          <p className="text-lg text-slate-600">
+            We offer comprehensive digital solutions tailored to your business needs.
           </p>
-
-          <button className="group bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-teal-600 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
-            Get Started
-            <ArrowRight className="h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
         </div>
 
-        {/* Decorative dots grid */}
-        <div className="absolute top-12 right-0 grid grid-cols-3 gap-4 opacity-20">
-          {[...Array(9)].map((_, i) => (
-            <div key={i} className="w-2 h-2 rounded-full bg-teal-400" />
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} index={index} />
           ))}
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent" />
     </section>
   );
 };
 
-export default HeroSection;
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  features: string[];
+  index: number;
+}
+
+const ServiceCard = ({ title, description, icon, features, index }: ServiceCardProps) => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform ${
+        inView 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-10'
+      }`}
+      style={{ 
+        transitionDelay: `${index * 150}ms`
+      }}
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <div className="p-3 rounded-lg bg-teal-50">
+          {icon}
+        </div>
+        <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
+      </div>
+      
+      <p className="text-slate-600 mb-6">{description}</p>
+      
+      <ul className="space-y-3">
+        {features.map((feature, i) => (
+          <li 
+            key={i}
+            className="flex items-center gap-2 text-slate-700"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const services = [
+  {
+    title: 'Web Development',
+    description: 'Custom web solutions built with cutting-edge technologies.',
+    icon: <Code className="w-6 h-6 text-teal-600" />,
+    features: [
+      'Custom Website Development',
+      'Web Application Development',
+      'API Integration',
+      'Performance Optimization'
+    ]
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'Beautiful, intuitive designs that engage your users.',
+    icon: <Palette className="w-6 h-6 text-teal-600" />,
+    features: [
+      'User Interface Design',
+      'User Experience Design',
+      'Prototyping',
+      'Design Systems'
+    ]
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Strategic digital marketing to grow your online presence.',
+    icon: <Globe className="w-6 h-6 text-teal-600" />,
+    features: [
+      'SEO Optimization',
+      'Content Strategy',
+      'Social Media Marketing',
+      'Analytics & Reporting'
+    ]
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'End-to-end e-commerce development and optimization.',
+    icon: <ShoppingCart className="w-6 h-6 text-teal-600" />,
+    features: [
+      'E-commerce Development',
+      'Payment Integration',
+      'Inventory Management',
+      'Shopping Cart Optimization'
+    ]
+  }
+];
+
+export default ServicesSection; 
