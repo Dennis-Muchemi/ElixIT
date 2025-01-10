@@ -1,34 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Code, Paintbrush, ShoppingBag, Database, BarChart, Smartphone } from 'lucide-react'
+import Link from 'next/link'
+import { serviceCategories } from '@/data/ServicesData'
 
-const categories = [
-  { id: 'web', label: 'Web Development', icon: Code },
-  { id: 'design', label: 'UI/UX Design', icon: Paintbrush },
-  { id: 'ecommerce', label: 'E-Commerce', icon: ShoppingBag },
-  { id: 'backend', label: 'Backend Services', icon: Database },
-  { id: 'analytics', label: 'Analytics', icon: BarChart },
-  { id: 'mobile', label: 'Mobile Apps', icon: Smartphone },
-]
-
-export function ServiceCategories() {
-  const [activeCategory, setActiveCategory] = useState('web')
-
+export function ServiceCategories({ activeServiceId }: { activeServiceId: string }) {
   return (
     <section className="sticky top-0 bg-white border-b border-slate-200 z-40">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex overflow-x-auto py-4 scrollbar-hide">
           <div className="flex gap-4">
-            {categories.map((category) => (
-              <CategoryButton
+            {serviceCategories.map((category) => (
+              <Link 
                 key={category.id}
-                isActive={activeCategory === category.id}
-                onClick={() => setActiveCategory(category.id)}
-                icon={category.icon}
-                label={category.label}
-              />
+                href={`/services/${category.id}`}
+                className="relative"
+              >
+                <CategoryButton
+                  isActive={activeServiceId === category.id}
+                  icon={category.icon}
+                  label={category.label}
+                />
+              </Link>
             ))}
           </div>
         </div>
@@ -37,14 +31,12 @@ export function ServiceCategories() {
   )
 }
 
-// Category Button component within ServiceCategories.tsx
-function CategoryButton({ isActive, onClick, icon: Icon, label }) {
+function CategoryButton({ isActive, icon: Icon, label }: { isActive: boolean; icon: React.ElementType; label: string }) {
   return (
-    <motion.button
+    <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      onClick={onClick}
-      className={`relative px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2 transition-colors
+      className={`px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2 transition-colors
         ${isActive ? 'text-teal-600 bg-teal-50' : 'text-slate-600 hover:bg-slate-50'}`}
     >
       <Icon size={20} />
@@ -56,6 +48,6 @@ function CategoryButton({ isActive, onClick, icon: Icon, label }) {
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
         />
       )}
-    </motion.button>
+    </motion.div>
   )
 }
