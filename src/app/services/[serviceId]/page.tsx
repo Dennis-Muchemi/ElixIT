@@ -11,6 +11,8 @@ import { FAQSection } from '@/components/ServicesPage/FAQSection'
 import { CTASection } from '@/components/ServicesPage/CTASection'
 import Footer from '@/components/layout/Footer'
 import { notFound } from 'next/navigation'
+import NavigationBar from '@/components/layout/NavigationBar'
+
 
 export default function ServicePage() {
   const { serviceId } = useParams()
@@ -22,6 +24,7 @@ export default function ServicePage() {
 
   return (
     <main className="min-h-screen">
+      <NavigationBar />
       <ServicesHero service={service} />
       <ServiceCategories activeServiceId={service.id} />
       <ServiceDetails service={service} />

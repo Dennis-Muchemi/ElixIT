@@ -4,6 +4,7 @@ import { FloatingCTA } from './FloatingCTA';
 import { ProjectFilters } from './ProjectFilters';
 import { ProjectGrid } from './ProjectGrid';
 import { projects } from '@/data/projectsData';
+import NavigationBar from '../layout/NavigationBar';
 
 export function ProjectsPage() {
   const [activeFilter, setActiveFilter] = React.useState('All');
@@ -21,6 +22,8 @@ export function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <NavigationBar />
+
       <section className="bg-gradient-to-br from-slate-900 to-slate-800 pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -35,8 +38,6 @@ export function ProjectsPage() {
           </div>
         </div>
       </section>
-
-      <FloatingCTA />
 
       <ProjectFilters 
         activeFilter={activeFilter}
