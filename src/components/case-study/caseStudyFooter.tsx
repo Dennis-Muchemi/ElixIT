@@ -1,22 +1,14 @@
-"use client"
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import type { Project } from '@/data/projectsData';
 
 interface CaseStudyFooterProps {
-  projectId: string;
+  nextProject: Project;
 }
 
-export function CaseStudyFooter({ projectId }: CaseStudyFooterProps) {
-  const nextProject = {
-    id: '2',
-    title: 'Analytics Dashboard',
-    category: 'SaaS Platform',
-    image: 'https://placehold.co/800x400',
-  };
-
+export function CaseStudyFooter({ nextProject }: CaseStudyFooterProps) {
   return (
     <section className="border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">

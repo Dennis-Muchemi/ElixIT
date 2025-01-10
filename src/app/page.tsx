@@ -78,25 +78,6 @@ const HomePage = () => {
       </main>
 
       <Footer />
-
-      {/* Background decorative elements - only rendered after mounting */}
-      {mounted && (
-        <div className="fixed inset-0 pointer-events-none">
-          {/* Parallax gradient backgrounds */}
-          <div 
-            className="absolute top-1/4 left-0 w-full h-screen bg-gradient-to-br from-teal-500/5 to-transparent transition-transform will-change-transform"
-            style={{
-              transform: `translate3d(0, ${-scrollY * 0.5}px, 0)`
-            }}
-          />
-          <div 
-            className="absolute top-3/4 right-0 w-full h-screen bg-gradient-to-bl from-accent-rose/5 to-transparent transition-transform will-change-transform"
-            style={{
-              transform: `translate3d(0, ${-scrollY * 0.3}px, 0)`
-            }}
-          />
-        </div>
-      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectCard } from './ProjectCard';
+import ProjectCard from '@/components/projects/ProjectCard';
 import { Layers } from 'lucide-react';
 
 interface Project {

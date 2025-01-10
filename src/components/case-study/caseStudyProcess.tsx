@@ -1,35 +1,13 @@
-"use client"
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { Project } from '@/data/projectsData';
 
 interface CaseStudyProcessProps {
-  projectId: string;
+  project: Project;
 }
 
-export function CaseStudyProcess({ projectId }: CaseStudyProcessProps) {
-  const steps = [
-    {
-      title: 'Discovery',
-      description: 'Understanding business goals, user needs, and technical requirements',
-      duration: '2 weeks',
-    },
-    {
-      title: 'Design',
-      description: 'Creating wireframes, visual designs, and interactive prototypes',
-      duration: '4 weeks',
-    },
-    {
-      title: 'Development',
-      description: 'Building the platform with a focus on performance and scalability',
-      duration: '8 weeks',
-    },
-    {
-      title: 'Testing & Launch',
-      description: 'Rigorous testing and staged rollout to ensure smooth transition',
-      duration: '2 weeks',
-    },
-  ];
+export function CaseStudyProcess({ project }: CaseStudyProcessProps) {
+  const { process } = project.fullCase;
 
   return (
     <section className="py-24">
@@ -45,11 +23,12 @@ export function CaseStudyProcess({ projectId }: CaseStudyProcessProps) {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-200 transform -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-200 
+            transform -translate-x-1/2" />
 
-          {/* Steps */}
+          {/* Process Steps */}
           <div className="space-y-16">
-            {steps.map((step, index) => (
+            {process.map((step, index) => (
               <motion.div
                 key={step.title}
                 initial={{ opacity: 0, y: 20 }}

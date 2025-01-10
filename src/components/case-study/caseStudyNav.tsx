@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 
 interface CaseStudyNavProps {
@@ -18,7 +16,7 @@ export function CaseStudyNav({ activeSection, onSectionChange, progress }: CaseS
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
+    <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       {/* Progress Bar */}
       <div 
         className="absolute top-0 left-0 h-0.5 bg-teal-500 transition-all duration-300"
@@ -26,12 +24,12 @@ export function CaseStudyNav({ activeSection, onSectionChange, progress }: CaseS
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-16 gap-8">
+        <div className="flex items-center h-16 gap-8 overflow-x-auto hide-scrollbar">
           {sections.map(section => (
             <button
               key={section.id}
               onClick={() => onSectionChange(section.id)}
-              className={`relative py-2 text-sm font-medium transition-colors
+              className={`relative py-2 text-sm font-medium whitespace-nowrap transition-colors
                 ${activeSection === section.id ? 'text-teal-600' : 'text-slate-600 hover:text-teal-600'}`}
             >
               {section.label}

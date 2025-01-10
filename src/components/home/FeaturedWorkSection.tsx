@@ -45,11 +45,11 @@ const FeaturedWorkSection = () => {
             className="group relative inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg overflow-hidden"
           >
             {/* Button background animation */}
-            <div className="absolute inset-0 w-0 bg-teal-600 transition-all duration-[750ms] ease-out group-hover:w-full" />
+            <div className="absolute inset-0 z-0 bg-teal-600 transition-all duration-500 ease-out scale-x-0 group-hover:scale-x-100 origin-left" />
             
             {/* Button content */}
-            <span className="relative">View All Projects</span>
-            <ArrowUpRight className="relative w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span className="relative z-10">View All Projects</span>
+            <ArrowUpRight className="relative z-10 w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </div>
       </div>

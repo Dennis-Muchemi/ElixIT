@@ -60,8 +60,9 @@ const HeroSection = () => {
         <div 
           className="max-w-4xl"
           style={{
-            transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
-            opacity: 1 - (scrollY * 0.002)
+            transform: `translate3d(0, ${scrollY * 0.2}px, 0)`,
+            opacity: Math.max(0, 1 - (scrollY * 0.001)),
+            transition: 'opacity 0.3s ease-out'
           }}
         >
           <div className="animate-fade-in-up-1">
@@ -99,13 +100,14 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div 
+      {/* Scroll Indicator */}
+      {/* <div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce"
         style={{ opacity: 1 - (scrollY * 0.005) }}
       >
         <div className="w-1 h-16 rounded-full bg-gradient-to-b from-white/20 to-transparent" />
         <span className="text-white/50 text-sm mt-2">Scroll to explore</span>
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -49,7 +49,8 @@ const FinalCTASection = () => {
                   top: `${Math.random() * 100}%`,
                   left: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 3}s`,
-                  transform: `translate3d(0, calc(var(--scroll-y, 0) * -${0.1 + Math.random() * 0.3}px), 0)`
+                  transform: `translate3d(0, calc(var(--scroll-y, 0) * -${0.05 + Math.random() * 0.1}px), 0)`,
+                  transition: 'transform 0.3s ease-out'
                 }}
               />
             ))}
