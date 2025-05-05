@@ -11,6 +11,14 @@ const FinalCTASection = () => {
     triggerOnce: true
   });
 
+  // Add background image style
+  const backgroundStyle = {
+    backgroundImage: `url('/elixIT_images/hero_4.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  };
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -19,9 +27,10 @@ const FinalCTASection = () => {
     <section 
       ref={ref} 
       className="relative py-24 overflow-hidden"
+      style={backgroundStyle}
     >
-      {/* Background with animated gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800">
+      {/* Dark overlay with gradient */}
+      <div className="absolute inset-0 bg-black/40">
         {mounted && (
           <>
             {/* Animated gradient orbs */}
@@ -58,9 +67,8 @@ const FinalCTASection = () => {
         )}
       </div>
 
-      {/* Content */}
+      {/* Content - Kept exactly the same */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Decorative label with shimmer effect */}
         <div 
           className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-8 transform transition-all duration-700 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -72,7 +80,6 @@ const FinalCTASection = () => {
           </span>
         </div>
 
-        {/* Main heading with gradient text */}
         <h2 
           className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight transform transition-all duration-700 delay-100 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -84,7 +91,6 @@ const FinalCTASection = () => {
           </span>
         </h2>
 
-        {/* Description */}
         <p 
           className={`max-w-2xl mx-auto text-lg text-slate-300 mb-12 transform transition-all duration-700 delay-200 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -94,29 +100,22 @@ const FinalCTASection = () => {
           presence with our expertise. Let's start your transformation journey today.
         </p>
 
-        {/* CTAs */}
         <div 
           className={`flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-700 delay-300 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Primary CTA with hover effect */}
           <button className="group relative inline-flex items-center justify-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-lg overflow-hidden">
-            {/* Button background animation */}
             <div className="absolute inset-0 w-0 bg-teal-600 transition-all duration-[750ms] ease-out group-hover:w-full" />
-            
-            {/* Button content */}
             <span className="relative">Start Your Project</span>
             <ArrowRight className="relative w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
           </button>
           
-          {/* Secondary CTA with glass effect */}
           <button className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg hover:bg-white/20 transition-all duration-300">
             Schedule a Call
           </button>
         </div>
 
-        {/* Trust indicators */}
         <div 
           className={`mt-16 transform transition-all duration-700 delay-400 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -141,7 +140,6 @@ const FinalCTASection = () => {
         </div>
       </div>
 
-      {/* Bottom decoration */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-500/20 to-transparent" />
     </section>
   );

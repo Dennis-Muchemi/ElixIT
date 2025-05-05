@@ -3,6 +3,7 @@
 import React from 'react';
 import { ArrowUpRight, Trophy } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
 
 const FeaturedWorkSection = () => {
   const { ref: sectionRef, inView: sectionInView } = useInView({
@@ -35,42 +36,47 @@ const FeaturedWorkSection = () => {
         {/* Project Grid with staggered animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} index={index} />
+            <ProjectCard key={project.id} {...project} index={index} />
           ))}
         </div>
 
         {/* View All Projects Button with hover animation */}
         <div className="text-center mt-16">
-          <button 
+          <Link 
+            href="/projects"
             className="group relative inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg overflow-hidden"
           >
-            {/* Button background animation */}
             <div className="absolute inset-0 z-0 bg-teal-600 transition-all duration-500 ease-out scale-x-0 group-hover:scale-x-100 origin-left" />
-            
-            {/* Button content */}
             <span className="relative z-10">View All Projects</span>
             <ArrowUpRight className="relative z-10 w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
 
+interface Stat {
+  value: string;
+  label: string;
+}
+
 interface ProjectCardProps {
+  id: string;
+  projectId: string;
   title: string;
   category: string;
   image: string;
   description: string;
-  stats: Array<{ value: string; label: string }>;
+  stats: Stat[];
   index: number;
 }
 
-const ProjectCard = ({ title, category, image, description, stats, index }: ProjectCardProps) => {
+const ProjectCard = ({ id, projectId, title, category, image, description, stats, index }: ProjectCardProps) => {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
-    delay: index * 200 // Stagger the animations
+    delay: index * 200
   });
 
   return (
@@ -82,99 +88,105 @@ const ProjectCard = ({ title, category, image, description, stats, index }: Proj
           : 'opacity-0 translate-y-20'
       }`}
     >
-      {/* Project Image with parallax effect */}
-      <div className="relative h-[300px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transform transition-transform duration-700 group-hover:scale-105"
-          style={{ backgroundImage: `url(${image})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      </div>
-
-      {/* Content */}
-      <div className="relative p-8 bg-white transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-        {/* Category Tag */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-50 text-teal-600 text-sm font-medium mb-4">
-          {category}
+      <Link href={`/projects/${projectId}`} className="block">
+        <div className="relative h-[300px] overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center transform transition-transform duration-700 group-hover:scale-105"
+            style={{ backgroundImage: `url(${image})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
-        <h3 className="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
-        <p className="text-slate-600 mb-6">{description}</p>
+        <div className="relative p-8 bg-white transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-50 text-teal-600 text-sm font-medium mb-4">
+            {category}
+          </div>
 
-        {/* Project Stats with sequential fade-in */}
-        <div className="flex gap-6 mb-6">
-          {stats.map((stat, statIndex) => (
-            <div 
-              key={statIndex}
-              className="group/stat"
-              style={{ 
-                animationDelay: `${(index * 200) + (statIndex * 100)}ms` 
-              }}
-            >
-              <div className="text-2xl font-bold text-slate-900 group-hover/stat:text-teal-500 transition-colors">
-                {stat.value}
+          <h3 className="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
+          <p className="text-slate-600 mb-6">{description}</p>
+
+          <div className="flex gap-6 mb-6">
+            {stats.map((stat: Stat, statIndex: number) => (
+              <div 
+                key={statIndex}
+                className="group/stat"
+                style={{ 
+                  animationDelay: `${(index * 200) + (statIndex * 100)}ms` 
+                }}
+              >
+                <div className="text-2xl font-bold text-slate-900 group-hover/stat:text-teal-500 transition-colors">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-slate-600">{stat.label}</div>
               </div>
-              <div className="text-sm text-slate-600">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* View Project Link with animated arrow */}
-        <a 
-          href="#" 
-          className="inline-flex items-center text-teal-500 hover:text-teal-600 font-medium group/link"
-        >
-          View Project 
-          <ArrowUpRight className="ml-2 w-4 h-4 transform transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-        </a>
-      </div>
+          <div>
+            <span 
+              className="inline-flex items-center text-teal-500 hover:text-teal-600 font-medium group/link cursor-pointer"
+            >
+              View Case Study 
+              <ArrowUpRight className="ml-2 w-4 h-4 transform transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+            </span>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };
 
 const projects = [
   {
-    title: "E-commerce Revolution",
+    id: "la-maison-dor",
+    projectId: "1", 
+    title: "La Maison D'Or Restaurant Website",
+    category: "Food & Hospitality",
+    image: "/La_Maison_D'Or_photos/image_1_a.jpg",
+    description: "A sophisticated fine dining restaurant website featuring an elegant design system, interactive booking system, and immersive user experience.",
+    stats: [
+      { value: "--", label: "Performance" },
+      { value: "--", label: "Bookings" },
+      { value: "--", label: "Engagement" }
+    ]
+  },
+  {
+    id: "harmony-wellness",
+    projectId: "2",  
+    title: "Harmony Wellness Center Website",
+    category: "Health & Wellness",
+    image: "/Harmony_wellness_center_photos/image_2_c.jpg",
+    description: "A dynamic wellness center website featuring an interactive class scheduling system, seamless user experience, and comprehensive content management capabilities.",
+    stats: [
+      { value: "--", label: "Bookings" },
+      { value: "--", label: "Engagement" },
+      { value: "--", label: "Performance" }
+    ]
+  },
+  {
+    id: "chic-style",
+    projectId: "3",  
+    title: "Chic & Style Boutique Website",
     category: "E-commerce",
-    image: "https://placehold.co/800x600",
-    description: "A complete digital transformation for a leading retail brand, resulting in 200% increase in online sales.",
+    image: "/boutique_photos/image_1.jpg",
+    description: "A luxury fashion e-commerce website featuring elegant animations, interactive product displays, and sophisticated user experience design.",
     stats: [
-      { value: "200%", label: "Growth" },
-      { value: "1.2M", label: "Users" },
-      { value: "35%", label: "Conversion" }
+      { value: "--", label: "Engagement" },
+      { value: "--", label: "Conversion" },
+      { value: "--", label: "Performance" }
     ]
   },
   {
-    title: "FinTech Innovation",
-    category: "Web Application",
-    image: "https://placehold.co/800x600",
-    description: "Modern banking platform with advanced security features and seamless user experience.",
+    id: "elite-home",
+    projectId: "4",  
+    title: "Elite Home Services Website",
+    category: "Service Business",
+    image: "/elite_home_serv_photos/image_19_b.jpg",
+    description: "A modern, high-performance website for a professional home services company featuring dynamic animations, interactive service booking, and real-time quote calculation.",
     stats: [
-      { value: "500K", label: "Users" },
-      { value: "99.9%", label: "Uptime" },
-      { value: "4.9", label: "Rating" }
-    ]
-  },
-  {
-    title: "Healthcare Platform",
-    category: "Mobile App",
-    image: "https://placehold.co/800x600",
-    description: "Revolutionary healthcare management system connecting patients with healthcare providers.",
-    stats: [
-      { value: "1M+", label: "Users" },
-      { value: "45%", label: "Efficiency" },
-      { value: "4.8", label: "Rating" }
-    ]
-  },
-  {
-    title: "Educational Tech",
-    category: "Web Platform",
-    image: "https://placehold.co/800x600",
-    description: "Interactive learning platform making education accessible to millions worldwide.",
-    stats: [
-      { value: "2M+", label: "Students" },
-      { value: "150+", label: "Courses" },
-      { value: "98%", label: "Satisfaction" }
+      { value: "--", label: "Bookings" },
+      { value: "--", label: "Conversion" },
+      { value: "--", label: "Mobile" }
     ]
   }
 ];

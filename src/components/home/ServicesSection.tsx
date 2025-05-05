@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Code, Palette, Globe, ShoppingCart } from 'lucide-react';
+import { Code, Globe, ShoppingCart, Cpu } from 'lucide-react';
+import Link from 'next/link';
 
 const ServicesSection = () => {
   return (
@@ -37,11 +38,15 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
-  features: string[];
+  features: Array<{
+    text: string;
+    link: string;
+  }>;
+  titleLink: string;
   index: number;
 }
 
-const ServiceCard = ({ title, description, icon, features, index }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, features, titleLink, index }: ServiceCardProps) => {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
@@ -63,7 +68,11 @@ const ServiceCard = ({ title, description, icon, features, index }: ServiceCardP
         <div className="p-3 rounded-lg bg-teal-50">
           {icon}
         </div>
-        <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
+        <Link href={titleLink} className="group">
+          <h3 className="text-2xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors">
+            {title}
+          </h3>
+        </Link>
       </div>
       
       <p className="text-slate-600 mb-6">{description}</p>
@@ -75,7 +84,12 @@ const ServiceCard = ({ title, description, icon, features, index }: ServiceCardP
             className="flex items-center gap-2 text-slate-700"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-            {feature}
+            <Link 
+              href={feature.link}
+              className="hover:text-teal-600 transition-colors"
+            >
+              {feature.text}
+            </Link>
           </li>
         ))}
       </ul>
@@ -85,49 +99,101 @@ const ServiceCard = ({ title, description, icon, features, index }: ServiceCardP
 
 const services = [
   {
-    title: 'Web Development',
-    description: 'Custom web solutions built with cutting-edge technologies.',
+    title: 'Web Design & Development',
+    description: 'Custom websites and applications that combine stunning design with powerful functionality.',
     icon: <Code className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/web-development',
     features: [
-      'Custom Website Development',
-      'Web Application Development',
-      'API Integration',
-      'Performance Optimization'
+      {
+        text: 'Custom Website & App Development',
+        link: '/services/web-development'
+      },
+      {
+        text: 'Responsive UI/UX Design',
+        link: '/services/ui-ux-design'
+      },
+      {
+        text: 'CMS Integration',
+        link: '/services/web-development#cms'
+      },
+      {
+        text: 'Performance Optimization',
+        link: '/services/technical-services#performance'
+      }
     ]
   },
   {
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive designs that engage your users.',
-    icon: <Palette className="w-6 h-6 text-teal-600" />,
-    features: [
-      'User Interface Design',
-      'User Experience Design',
-      'Prototyping',
-      'Design Systems'
-    ]
-  },
-  {
-    title: 'Digital Marketing',
-    description: 'Strategic digital marketing to grow your online presence.',
+    title: 'Brand & Digital Strategy',
+    description: 'Comprehensive branding and digital solutions to establish your market presence.',
     icon: <Globe className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/branding',
     features: [
-      'SEO Optimization',
-      'Content Strategy',
-      'Social Media Marketing',
-      'Analytics & Reporting'
+      {
+        text: 'Brand Identity Development',
+        link: '/services/branding'
+      },
+      {
+        text: 'Digital Strategy',
+        link: '/services/branding#strategy'
+      },
+      {
+        text: 'Content Strategy',
+        link: '/services/content-creation'
+      },
+      {
+        text: 'Marketing Collateral',
+        link: '/services/branding#collateral'
+      }
     ]
   },
   {
-    title: 'E-commerce Solutions',
-    description: 'End-to-end e-commerce development and optimization.',
-    icon: <ShoppingCart className="w-6 h-6 text-teal-600" />,
+    title: 'Technical Services',
+    description: 'Expert technical solutions to keep your digital presence secure and efficient.',
+    icon: <Cpu className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/technical-services',
     features: [
-      'E-commerce Development',
-      'Payment Integration',
-      'Inventory Management',
-      'Shopping Cart Optimization'
+      {
+        text: 'Hosting & Domain Management',
+        link: '/services/technical-services#hosting'
+      },
+      {
+        text: 'Security Implementation',
+        link: '/services/technical-services#security'
+      },
+      {
+        text: 'Performance Optimization',
+        link: '/services/technical-services#performance'
+      },
+      {
+        text: 'Technical Maintenance',
+        link: '/services/technical-services#maintenance'
+      }
+    ]
+  },
+  {
+    title: 'Digital Solutions',
+    description: 'Integrated digital solutions including e-commerce and content management.',
+    icon: <ShoppingCart className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/ecommerce',
+    features: [
+      {
+        text: 'E-commerce Development',
+        link: '/services/ecommerce'
+      },
+      {
+        text: 'Content Management Systems',
+        link: '/services/web-development#cms'
+      },
+      {
+        text: 'Digital Marketing Integration',
+        link: '/services/digital-marketing'
+      },
+      {
+        text: 'Analytics & Reporting',
+        link: '/services/analytics'
+      }
     ]
   }
 ];
 
-export default ServicesSection; 
+export default ServicesSection;

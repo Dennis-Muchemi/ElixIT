@@ -35,6 +35,9 @@ const NavigationBar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-slate-300 hover:text-white transition-colors duration-300">
+              Home
+            </Link>
             <Link href="/services" className="text-slate-300 hover:text-white transition-colors duration-300">
               Services
             </Link>
@@ -70,6 +73,9 @@ const NavigationBar = () => {
         {mounted && (
           <div className={`md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
             <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-900/95 backdrop-blur-lg">
+              <Link href="/home" className="block px-3 py-2 text-white hover:bg-slate-800 rounded-md">
+                Home
+              </Link>
               <Link href="/services" className="block px-3 py-2 text-white hover:bg-slate-800 rounded-md">
                 Services
               </Link>

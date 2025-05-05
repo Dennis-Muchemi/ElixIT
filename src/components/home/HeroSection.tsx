@@ -7,6 +7,13 @@ const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
 
+  const backgroundStyle = {
+    backgroundImage: `url('/elixIT_images/hero_2.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  };
+
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => setScrollY(window.scrollY);
@@ -15,7 +22,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center" style={backgroundStyle}>
+      {/* Dark overlay with reduced opacity */}
+      <div className="absolute inset-0 bg-black/40" />
+
       {/* Background Elements */}
       {mounted && (
         <>
@@ -56,7 +66,7 @@ const HeroSection = () => {
       )}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full pl-12 pt-16">
         <div 
           className="max-w-4xl"
           style={{
@@ -98,16 +108,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      {/* Scroll Indicator */}
-      {/* <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce"
-        style={{ opacity: 1 - (scrollY * 0.005) }}
-      >
-        <div className="w-1 h-16 rounded-full bg-gradient-to-b from-white/20 to-transparent" />
-        <span className="text-white/50 text-sm mt-2">Scroll to explore</span>
-      </div> */}
     </section>
   );
 };

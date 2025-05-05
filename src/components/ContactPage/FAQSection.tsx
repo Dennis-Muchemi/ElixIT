@@ -8,7 +8,7 @@ export function FAQSection() {
         <div className="space-y-4">
           <FAQItem
             question="What is your typical project timeline?"
-            answer="Most projects take 8-12 weeks from start to finish, depending on the scope and complexity."
+            answer="Most projects take 4-6 weeks from start to finish, depending on the scope and complexity."
           />
           <FAQItem
             question="Do you offer ongoing support?"

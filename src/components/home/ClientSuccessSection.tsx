@@ -202,29 +202,29 @@ const ClientSuccessSection = () => {
 };
 
 const stats = [
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "250+", label: "Projects Delivered" },
-  { value: "15+", label: "Industry Awards" },
-  { value: "10+", label: "Years Experience" }
+  { value: "--", label: "Client Satisfaction" },
+  { value: "--", label: "Projects Delivered" },
+  { value: "--", label: "Industry Awards" },
+  { value: "--", label: "Years Experience" }
 ];
 
 const testimonials = [
   {
     content: "ElixIT transformed our online presence completely. Their attention to detail and innovative solutions helped us achieve a 200% increase in user engagement.",
     name: "Sarah Johnson",
-    position: "CEO at TechCorp",
+    position: "--",
     avatar: "/api/placeholder/100/100"
   },
   {
     content: "Working with ElixIT was a game-changer for our business. Their team's expertise and dedication to excellence delivered results beyond our expectations.",
     name: "Michael Chen",
-    position: "Founder at InnovateLabs",
+    position: "--",
     avatar: "/api/placeholder/100/100"
   },
   {
     content: "The team at ElixIT doesn't just build websites, they create digital experiences that drive real business results. They're truly partners in our success.",
     name: "Emma Davis",
-    position: "Marketing Director at GrowthX",
+    position: "--",
     avatar: "/api/placeholder/100/100"
   }
 ];
