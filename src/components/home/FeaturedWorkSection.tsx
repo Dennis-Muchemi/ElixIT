@@ -142,7 +142,7 @@ const projects = [
     projectId: "1", 
     title: "La Maison D'Or Restaurant Website",
     category: "Food & Hospitality",
-    image: "/La_Maison_D'Or_photos/image_1_a.jpg",
+    image: "/La_Maison_DOr/italian_2.jpg",
     description: "A sophisticated fine dining restaurant website featuring an elegant design system, interactive booking system, and immersive user experience.",
     stats: [
       { value: "--", label: "Performance" },

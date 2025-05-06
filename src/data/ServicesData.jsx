@@ -11,46 +11,48 @@ import {
   Layout,
   Shield,
   Cpu,
-  MessageSquare
+  MessageSquare,
+  Wrench,
+  RefreshCw
 } from 'lucide-react';
 
 export const heroContent = {
   title: "Transform Your Digital Presence with Our",
-  highlightedText: "Professional Services",
-  description: "We combine creativity, strategy, and innovative solutions to help your business succeed online.",
+  highlightedText: "Web Development Services",
+  description: "Custom-coded solutions and WordPress expertise to help your business succeed online.",
   buttonText: "Explore Our Services"
 };
 
 export const serviceCategories = [
   {
-    id: 'website-design',
-    label: 'Website Design',
+    id: 'custom-web-development',
+    label: 'Custom Website Development',
     icon: Code,
     hero: {
-      title: "Custom Website Design Solutions",
-      description: "Create stunning, high-performance websites that drive results",
-      image: "/images/services/web-dev-hero.jpg"
+      title: "Custom Website Development",
+      description: "Hand-coded websites built from scratch for unique functionality and performance",
+      image: "/Services/custom_website_1.jpg"
     },
     overview: {
-      title: "Transforming Ideas into Powerful Websites",
-      description: "Our website design service delivers custom, responsive websites that engage users and drive business growth.",
+      title: "Custom-Coded Website Solutions",
+      description: "We build websites from scratch using clean, efficient code to deliver exactly what your business needs.",
       keyPoints: [
-        "Custom website development",
-        "Responsive design",
-        "CMS integration",
-        "Performance optimization"
+        "Fully customized designs and features",
+        "Clean, efficient coding practices",
+        "Optimal performance and speed",
+        "Unique functionality tailored to your needs"
       ]
     },
     features: [
       {
-        title: "Custom Design",
-        description: "Unique websites tailored to your brand",
-        icon: Layout
+        title: "Custom Functionality",
+        description: "Tailored features specific to your business needs",
+        icon: Code
       },
       {
-        title: "CMS Development",
-        description: "Easy-to-manage content systems",
-        icon: Database
+        title: "Performance Optimization",
+        description: "Fast-loading, efficient websites",
+        icon: Cpu
       },
       {
         title: "Responsive Design",
@@ -58,9 +60,135 @@ export const serviceCategories = [
         icon: Smartphone
       },
       {
-        title: "SEO Optimization",
-        description: "Built for search engines",
-        icon: Search
+        title: "Technical Expertise",
+        description: "Professional HTML, CSS, JavaScript development",
+        icon: Database
+      }
+    ],
+    process: [
+      {
+        title: "Discovery",
+        description: "Understanding your requirements",
+        duration: "1 week"
+      },
+      {
+        title: "Planning",
+        description: "Architecture and technical planning",
+        duration: "1-2 weeks"
+      },
+      {
+        title: "Design",
+        description: "Creating visual mockups",
+        duration: "2-3 weeks"
+      },
+      {
+        title: "Development",
+        description: "Hand-coding your website",
+        duration: "4-6 weeks"
+      },
+      {
+        title: "Testing",
+        description: "Quality assurance across devices",
+        duration: "1 week"
+      },
+      {
+        title: "Launch",
+        description: "Deployment and going live",
+        duration: "1 week"
+      }
+    ],
+    technologies: [
+      {
+        name: "HTML5",
+        icon: "/common/html_2.jpg"
+      },
+      {
+        name: "CSS3",
+        icon: "/common/css_2.png"
+      },
+      {
+        name: "JavaScript",
+        icon: "/common/javascript_1.png"
+      },
+      {
+        name: "React",
+        icon: "/common/react_3.png"
+      },
+      {
+        name: "Next.js",
+        icon: "/common/next_1.png"
+      }
+    ],
+    faqs: [
+      {
+        question: "Why choose custom coding over website builders?",
+        answer: "Custom coding provides full control over design, functionality, and performance. It allows for unique features that template-based solutions can't deliver."
+      },
+      {
+        question: "How long does a custom website take to build?",
+        answer: "A typical custom website takes 8-12 weeks from start to finish, depending on complexity."
+      },
+      {
+        question: "Is custom coding more expensive than using builders?",
+        answer: "Initially yes, but custom websites often provide better long-term value through better performance, SEO advantages, and the ability to expand functionality exactly as needed."
+      },
+      {
+        question: "Will I be able to update my custom website?",
+        answer: "We can build custom admin interfaces or integrate content management systems to allow you to make updates easily."
+      }
+    ],
+    caseStudies: [
+      {
+        title: "E-Commerce Store Rebuild",
+        description: "Custom-coded solution replacing template site",
+        metrics: [
+          { label: "Page Load Speed", value: "-70%" },
+          { label: "Conversion Rate", value: "+45%" },
+          { label: "Mobile Sales", value: "+125%" }
+        ],
+        image: "/images/case-studies/custom-code-case.jpg"
+      }
+    ]
+  },
+  {
+    id: 'wordpress-development',
+    label: 'WordPress Development',
+    icon: Layout,
+    hero: {
+      title: "Professional WordPress Development",
+      description: "Custom WordPress websites with powerful functionality and easy content management",
+      image: "/Services/wordpress_3.png"
+    },
+    overview: {
+      title: "Expert WordPress Development Solutions",
+      description: "We create custom WordPress websites that combine beautiful design, powerful functionality, and easy content management.",
+      keyPoints: [
+        "Custom theme development",
+        "Plugin integration and configuration",
+        "E-commerce solutions with WooCommerce",
+        "Performance optimization"
+      ]
+    },
+    features: [
+      {
+        title: "Custom Themes",
+        description: "Unique WordPress designs tailored to your brand",
+        icon: Paintbrush
+      },
+      {
+        title: "Plugin Integration",
+        description: "Extending functionality with the right plugins",
+        icon: Database
+      },
+      {
+        title: "WooCommerce",
+        description: "Professional e-commerce solutions",
+        icon: ShoppingBag
+      },
+      {
+        title: "Easy Management",
+        description: "User-friendly content updates",
+        icon: Layout
       }
     ],
     process: [
@@ -71,351 +199,266 @@ export const serviceCategories = [
       },
       {
         title: "Design",
-        description: "Creating your website's look",
+        description: "Creating your WordPress theme",
         duration: "2-3 weeks"
       },
       {
         title: "Development",
-        description: "Building your website",
-        duration: "4-6 weeks"
+        description: "Building your custom WordPress site",
+        duration: "3-5 weeks"
+      },
+      {
+        title: "Plugin Setup",
+        description: "Configuring functionality",
+        duration: "1-2 weeks"
       },
       {
         title: "Testing",
-        description: "Ensuring everything works",
+        description: "Quality assurance",
         duration: "1 week"
       },
       {
-        title: "Launch",
-        description: "Going live",
+        title: "Launch & Training",
+        description: "Going live and teaching you to manage content",
         duration: "1 week"
       }
     ],
     technologies: [
       {
         name: "WordPress",
-        icon: "/images/tech/wordpress.svg"
+        icon: "/common/wordpress.jpg"
       },
       {
-        name: "React",
-        icon: "/images/tech/react.svg"
+        name: "WooCommerce",
+        icon: "/common/woocommerce.jpg"
       },
       {
-        name: "Next.js",
-        icon: "/images/tech/nextjs.svg"
+        name: "PHP",
+        icon: "/common/php.jpg"
+      },
+      {
+        name: "MySQL",
+        icon: "/common/mysql.png"
       }
     ],
     faqs: [
       {
-        question: "How long does it take to build a website?",
-        answer: "A typical custom website takes 8-12 weeks from start to finish."
+        question: "Can you customize existing WordPress themes?",
+        answer: "Yes, we can customize existing themes or build completely custom themes from scratch."
       },
       {
-        question: "Do you provide hosting?",
-        answer: "Yes, we offer reliable hosting solutions with regular maintenance."
+        question: "Do you provide WordPress maintenance?",
+        answer: "Yes, we offer regular updates, security monitoring, and ongoing support for WordPress websites."
       },
       {
-        question: "Can you update my existing website?",
-        answer: "Yes, we can modernize and improve your current website."
+        question: "Can you migrate my existing site to WordPress?",
+        answer: "Yes, we can migrate your content from another platform to WordPress while maintaining SEO value."
       },
       {
-        question: "Do you handle domain registration?",
-        answer: "Yes, we can help with domain registration and management."
+        question: "Is WordPress secure?",
+        answer: "With proper setup and maintenance, WordPress is very secure. We implement security best practices for all sites."
       }
     ],
     caseStudies: [
       {
-        title: "Business Website Redesign",
-        description: "Modern redesign leading to 200% increase in leads",
+        title: "Business WordPress Platform",
+        description: "Custom WordPress implementation with advanced functionality",
         metrics: [
-          { label: "Conversion Rate", value: "+150%" },
-          { label: "Page Load Speed", value: "-60%" },
-          { label: "Mobile Traffic", value: "+125%" }
+          { label: "Content Updates", value: "10x faster" },
+          { label: "Organic Traffic", value: "+85%" },
+          { label: "Conversion Rate", value: "+45%" }
         ],
-        image: "/images/case-studies/website-redesign.jpg"
+        image: "/images/case-studies/wordpress-case.jpg"
       }
     ]
   },
   {
-    id: 'web-development',
-    label: 'Web Development',
-    icon: Code,
+    id: 'website-redesign',
+    label: 'Website Redesign',
+    icon: RefreshCw,
     hero: {
-      title: "Professional Web Development Solutions",
-      description: "Build powerful, scalable web applications that drive your business forward",
-      image: "/images/services/web-dev-hero.jpg"
+      title: "Website Redesign Services",
+      description: "Transform your outdated website into a modern, high-performing digital asset",
+      image: "/images/services/redesign-hero.jpg"
     },
     overview: {
-      title: "Expert Web Development Services",
-      description: "We develop custom web applications and solutions that provide powerful functionality and seamless user experiences.",
+      title: "Modernizing Outdated Websites",
+      description: "We transform existing websites into modern, effective digital platforms that drive results and improve user experience.",
       keyPoints: [
-        "Custom web applications",
-        "Frontend & backend development",
-        "API integration",
-        "Database architecture"
+        "Modern design implementation",
+        "User experience improvements",
+        "Mobile responsiveness upgrades",
+        "Performance optimization"
       ]
     },
     features: [
       {
-        title: "Custom Development",
-        description: "Tailored web applications and solutions",
-        icon: Code
+        title: "Modern Design",
+        description: "Contemporary aesthetics and interfaces",
+        icon: Paintbrush
       },
       {
-        title: "API Development",
-        description: "Custom APIs and integrations",
-        icon: Database
+        title: "Mobile Optimization",
+        description: "Fully responsive on all devices",
+        icon: Smartphone
       },
       {
-        title: "E-commerce Solutions",
-        description: "Custom shopping experiences",
-        icon: ShoppingBag
+        title: "UX Improvements",
+        description: "Enhanced navigation and usability",
+        icon: Layout
       },
       {
-        title: "Performance",
-        description: "Fast, scalable applications",
+        title: "Performance Boost",
+        description: "Faster loading and better performance",
         icon: Cpu
       }
     ],
     process: [
       {
+        title: "Site Audit",
+        description: "Evaluating current website",
+        duration: "1 week"
+      },
+      {
         title: "Planning",
-        description: "Technical requirements and architecture",
-        duration: "2 weeks"
+        description: "Mapping improvements",
+        duration: "1-2 weeks"
       },
       {
-        title: "Development",
-        description: "Building core functionality",
-        duration: "8-12 weeks"
-      },
-      {
-        title: "Integration",
-        description: "Connecting systems and APIs",
+        title: "Design",
+        description: "Creating new visual direction",
         duration: "2-3 weeks"
       },
       {
-        title: "Testing",
-        description: "Quality assurance and optimization",
-        duration: "2 weeks"
+        title: "Development",
+        description: "Building the redesigned site",
+        duration: "3-6 weeks"
       },
       {
-        title: "Deployment",
-        description: "Launch and monitoring",
+        title: "Content Migration",
+        description: "Moving and updating content",
+        duration: "1-2 weeks"
+      },
+      {
+        title: "Launch",
+        description: "Going live with the new site",
         duration: "1 week"
       }
     ],
     technologies: [
       {
-        name: "React",
-        icon: "/images/tech/react.svg"
+        name: "HTML5",
+        icon: "/images/tech/html5.svg"
       },
       {
-        name: "Node.js",
-        icon: "/images/tech/nodejs.svg"
+        name: "CSS3",
+        icon: "/images/tech/css3.svg"
       },
       {
-        name: "MongoDB",
-        icon: "/images/tech/mongodb.svg"
+        name: "WordPress",
+        icon: "/images/tech/wordpress.svg"
       },
       {
-        name: "AWS",
-        icon: "/images/tech/aws.svg"
+        name: "JavaScript",
+        icon: "/images/tech/javascript.svg"
       }
     ],
     faqs: [
       {
-        question: "What type of web applications can you build?",
-        answer: "We build various applications including e-commerce platforms, customer portals, booking systems, and custom business applications."
+        question: "How do you preserve our SEO during redesign?",
+        answer: "We implement proper redirects, maintain key SEO elements, and ensure all valuable content is preserved or enhanced."
       },
       {
-        question: "Do you work with specific technologies?",
-        answer: "We specialize in modern technologies like React, Node.js, and cloud platforms, but can adapt based on project requirements."
+        question: "Can you keep our site running during redesign?",
+        answer: "Yes, we develop your new site on a staging server while your current site remains live until launch."
       },
       {
-        question: "Can you integrate with existing systems?",
-        answer: "Yes, we can integrate with your existing software, APIs, and databases."
+        question: "Will we lose content during redesign?",
+        answer: "No, we carefully migrate all valuable content from your existing site to the redesigned version."
       },
       {
-        question: "Do you provide ongoing support?",
-        answer: "Yes, we offer maintenance and support packages to keep your application running smoothly."
+        question: "How long does a website redesign take?",
+        answer: "Most redesigns take 6-10 weeks, depending on the size and complexity of your current site."
       }
     ],
     caseStudies: [
       {
-        title: "Enterprise Web Application",
-        description: "Custom platform development with complex integrations",
+        title: "Corporate Site Transformation",
+        description: "Complete redesign with modern UX principles",
         metrics: [
-          { label: "Processing Time", value: "-75%" },
-          { label: "User Efficiency", value: "+200%" },
-          { label: "Cost Savings", value: "$500K/year" }
+          { label: "Bounce Rate", value: "-60%" },
+          { label: "Mobile Traffic", value: "+130%" },
+          { label: "Lead Generation", value: "+85%" }
         ],
-        image: "/images/case-studies/webapp-case.jpg"
-      }
-    ]
-},
-  {
-    id: 'branding',
-    label: 'Branding & Identity',
-    icon: Paintbrush,
-    hero: {
-      title: "Strategic Brand Development",
-      description: "Build a memorable brand that connects with your audience",
-      image: "/images/services/branding-hero.jpg"
-    },
-    overview: {
-      title: "Creating Distinctive Brand Identities",
-      description: "We develop compelling brand experiences that resonate with your audience and drive business growth.",
-      keyPoints: [
-        "Brand strategy development",
-        "Visual identity design",
-        "Brand guidelines",
-        "Marketing collateral"
-      ]
-    },
-    features: [
-      {
-        title: "Logo Design",
-        description: "Memorable brand symbols",
-        icon: Paintbrush
-      },
-      {
-        title: "Brand Strategy",
-        description: "Comprehensive positioning",
-        icon: Layout
-      },
-      {
-        title: "Style Guides",
-        description: "Consistent brand rules",
-        icon: MessageSquare
-      },
-      {
-        title: "Marketing Materials",
-        description: "Cohesive brand assets",
-        icon: Globe
-      }
-    ],
-    process: [
-      {
-        title: "Research",
-        description: "Understanding your market",
-        duration: "1-2 weeks"
-      },
-      {
-        title: "Strategy",
-        description: "Developing positioning",
-        duration: "2 weeks"
-      },
-      {
-        title: "Design",
-        description: "Creating visual identity",
-        duration: "3-4 weeks"
-      },
-      {
-        title: "Guidelines",
-        description: "Documenting standards",
-        duration: "2 weeks"
-      }
-    ],
-    technologies: [
-      {
-        name: "Adobe Creative Suite",
-        icon: "/images/tech/adobe.svg"
-      },
-      {
-        name: "Figma",
-        icon: "/images/tech/figma.svg"
-      },
-      {
-        name: "Sketch",
-        icon: "/images/tech/sketch.svg"
-      }
-    ],
-    faqs: [
-      {
-        question: "What's included in brand identity?",
-        answer: "Logo, color palette, typography, style guide, and basic marketing materials."
-      },
-      {
-        question: "How long does branding take?",
-        answer: "A complete brand identity typically takes 6-8 weeks."
-      },
-      {
-        question: "Can you update existing branding?",
-        answer: "Yes, we can refresh and modernize your current brand identity."
-      }
-    ],
-    caseStudies: [
-      {
-        title: "Startup Brand Launch",
-        description: "Complete brand identity for tech startup",
-        metrics: [
-          { label: "Brand Recognition", value: "+200%" },
-          { label: "Customer Trust", value: "+85%" },
-          { label: "Market Position", value: "Top 3" }
-        ],
-        image: "/images/case-studies/brand-launch.jpg"
+        image: "/images/case-studies/redesign-case.jpg"
       }
     ]
   },
   {
-    id: 'digital-marketing',
-    label: 'Digital Marketing',
-    icon: BarChart,
+    id: 'seo-optimization',
+    label: 'SEO Optimization',
+    icon: Search,
     hero: {
-      title: "Results-Driven Digital Marketing",
-      description: "Grow your online presence and reach your target audience",
-      image: "/images/services/marketing-hero.jpg"
+      title: "Website SEO Optimization",
+      description: "Improve your search rankings and drive more targeted traffic to your website",
+      image: "/images/services/seo-hero.jpg"
     },
     overview: {
-      title: "Strategic Digital Marketing Solutions",
-      description: "We create data-driven marketing campaigns that increase visibility and drive conversions.",
+      title: "Comprehensive SEO Solutions",
+      description: "We optimize your website's technical foundation, content, and authority to improve search engine visibility and rankings.",
       keyPoints: [
-        "SEO optimization",
-        "Social media management",
-        "Email marketing",
-        "Content strategy"
+        "Technical SEO improvements",
+        "Keyword optimization",
+        "Content strategy",
+        "Performance enhancements"
       ]
     },
     features: [
       {
-        title: "SEO Services",
-        description: "Improve search rankings",
-        icon: Search
+        title: "Technical SEO",
+        description: "Site structure and backend optimization",
+        icon: Code
       },
       {
-        title: "Social Media",
-        description: "Engage your audience",
-        icon: Globe
+        title: "On-Page SEO",
+        description: "Content and keyword optimization",
+        icon: Layout
       },
       {
-        title: "Email Marketing",
-        description: "Convert and retain customers",
-        icon: MessageSquare
+        title: "Performance Optimization",
+        description: "Speed and mobile improvements",
+        icon: Cpu
       },
       {
-        title: "Analytics",
-        description: "Track performance",
+        title: "Analytics & Reporting",
+        description: "Tracking progress and results",
         icon: BarChart
       }
     ],
     process: [
       {
-        title: "Audit",
-        description: "Analyzing current presence",
-        duration: "1 week"
+        title: "SEO Audit",
+        description: "Comprehensive site evaluation",
+        duration: "1-2 weeks"
       },
       {
         title: "Strategy",
-        description: "Planning campaigns",
-        duration: "2 weeks"
+        description: "Custom SEO plan development",
+        duration: "1 week"
       },
       {
         title: "Implementation",
-        description: "Executing campaigns",
+        description: "Applying technical improvements",
+        duration: "2-4 weeks"
+      },
+      {
+        title: "Content Optimization",
+        description: "Enhancing content for SEO",
         duration: "Ongoing"
       },
       {
-        title: "Optimization",
-        description: "Improving results",
+        title: "Monitoring",
+        description: "Tracking and adjusting strategy",
         duration: "Ongoing"
       }
     ],
@@ -429,314 +472,106 @@ export const serviceCategories = [
         icon: "/images/tech/semrush.svg"
       },
       {
-        name: "Mailchimp",
-        icon: "/images/tech/mailchimp.svg"
+        name: "Ahrefs",
+        icon: "/images/tech/ahrefs.svg"
+      },
+      {
+        name: "Google Search Console",
+        icon: "/images/tech/search-console.svg"
       }
     ],
     faqs: [
       {
-        question: "How long until I see results?",
-        answer: "Initial results are typically visible within 3-6 months, with SEO taking longer to fully mature."
+        question: "How long does SEO take to show results?",
+        answer: "SEO is a long-term strategy. Initial improvements can be seen in 2-3 months, with significant results typically visible in 4-6 months."
       },
       {
-        question: "What channels do you work with?",
-        answer: "We work across all major digital channels including search, social, email, and display advertising."
+        question: "What types of SEO do you provide?",
+        answer: "We provide technical SEO, on-page optimization, content strategy, and general website performance improvements."
       },
       {
-        question: "Do you provide regular reports?",
-        answer: "Yes, we provide detailed monthly reports and performance analytics."
+        question: "Do you guarantee first-page rankings?",
+        answer: "No reputable SEO company can guarantee rankings. We implement best practices that have consistently improved rankings for our clients."
+      },
+      {
+        question: "Do you provide SEO reports?",
+        answer: "Yes, we provide detailed monthly reports showing progress, rankings, traffic, and recommendations."
       }
     ],
     caseStudies: [
       {
-        title: "E-commerce Marketing Success",
-        description: "Comprehensive digital marketing campaign",
+        title: "Local Business SEO Success",
+        description: "Comprehensive SEO strategy for small business",
         metrics: [
-          { label: "Organic Traffic", value: "+200%" },
-          { label: "Conversion Rate", value: "+75%" },
-          { label: "ROI", value: "350%" }
+          { label: "Organic Traffic", value: "+210%" },
+          { label: "First-Page Keywords", value: "+450%" },
+          { label: "Lead Generation", value: "+85%" }
         ],
-        image: "/images/case-studies/marketing-success.jpg"
+        image: "/images/case-studies/seo-case.jpg"
       }
     ]
   },
   {
-    id: 'technical-services',
-    label: 'Technical Services',
-    icon: Cpu,
+    id: 'website-maintenance',
+    label: 'Website Maintenance',
+    icon: Wrench,
     hero: {
-      title: "Professional Technical Services",
-      description: "Keep your digital presence secure, fast, and reliable with our expert technical solutions",
-      image: "/images/services/technical-hero.jpg"
+      title: "Professional Website Maintenance",
+      description: "Keep your website secure, up-to-date, and performing at its best",
+      image: "/images/services/maintenance-hero.jpg"
     },
     overview: {
-      title: "Comprehensive Technical Support & Management",
-      description: "We provide expert technical services to ensure your web presence runs smoothly, securely, and efficiently.",
+      title: "Comprehensive Website Care",
+      description: "We provide ongoing maintenance and support to ensure your website remains secure, up-to-date, and performs optimally.",
       keyPoints: [
-        "Web hosting & server management",
-        "Security implementation",
-        "Performance optimization",
-        "Regular maintenance & updates"
+        "Regular updates and security patches",
+        "Performance monitoring and optimization",
+        "Content updates and management",
+        "Technical support and troubleshooting"
       ]
     },
     features: [
       {
-        title: "Hosting Management",
-        description: "Professional web hosting setup and maintenance",
-        icon: Database
-      },
-      {
-        title: "Security Services",
-        description: "SSL certificates and security measures",
+        title: "Security Updates",
+        description: "Regular security patches and monitoring",
         icon: Shield
       },
       {
-        title: "Performance",
-        description: "Speed and optimization services",
+        title: "Performance Tuning",
+        description: "Speed and functionality optimization",
         icon: Cpu
       },
       {
-        title: "Maintenance",
-        description: "Regular updates and backups",
-        icon: Code
-      }
-    ],
-    process: [
-      {
-        title: "Audit",
-        description: "Technical environment assessment",
-        duration: "1 week"
-      },
-      {
-        title: "Planning",
-        description: "Service and solution planning",
-        duration: "1 week"
-      },
-      {
-        title: "Implementation",
-        description: "Service setup and configuration",
-        duration: "1-2 weeks"
-      },
-      {
-        title: "Monitoring",
-        description: "Ongoing support and maintenance",
-        duration: "Ongoing"
-      }
-    ],
-    technologies: [
-      {
-        name: "AWS",
-        icon: "/images/tech/aws.svg"
-      },
-      {
-        name: "CloudFlare",
-        icon: "/images/tech/cloudflare.svg"
-      },
-      {
-        name: "cPanel",
-        icon: "/images/tech/cpanel.svg"
-      },
-      {
-        name: "Linux",
-        icon: "/images/tech/linux.svg"
-      }
-    ],
-    faqs: [
-      {
-        question: "What hosting services do you provide?",
-        answer: "We offer managed hosting solutions including server setup, domain management, and regular maintenance."
-      },
-      {
-        question: "How do you handle security?",
-        answer: "We implement SSL certificates, firewalls, regular security updates, and monitoring to protect your website."
-      },
-      {
-        question: "Do you provide backup services?",
-        answer: "Yes, we perform regular backups and maintain secure copies of your website and database."
-      },
-      {
-        question: "What's included in maintenance?",
-        answer: "Our maintenance includes updates, security patches, performance monitoring, and technical support."
-      }
-    ],
-    caseStudies: [
-      {
-        title: "Enterprise Infrastructure Upgrade",
-        description: "Complete technical overhaul improving security and performance",
-        metrics: [
-          { label: "Load Time", value: "-70%" },
-          { label: "Uptime", value: "99.9%" },
-          { label: "Security Score", value: "+85%" }
-        ],
-        image: "/images/case-studies/technical-case.jpg"
-      }
-    ]
-  },
-  {
-    id: 'ecommerce',
-    label: 'E-Commerce',
-    icon: ShoppingBag,
-    hero: {
-      title: "Custom E-Commerce Solutions",
-      description: "Build powerful online stores that drive sales",
-      image: "/images/services/ecommerce-hero.jpg"
-    },
-    overview: {
-      title: "Complete E-Commerce Development",
-      description: "We create custom online shopping experiences that maximize conversions and streamline operations.",
-      keyPoints: [
-        "Custom store development",
-        "Payment integration",
-        "Inventory management",
-        "Shopping experience optimization"
-      ]
-    },
-    features: [
-      {
-        title: "Custom Stores",
-        description: "Tailored to your needs",
-        icon: ShoppingBag
-      },
-      {
-        title: "Secure Payments",
-        description: "Multiple payment options",
-        icon: Shield
-      },
-      {
-        title: "Inventory System",
-        description: "Stock management",
-        icon: Database
-      },
-      {
-        title: "Analytics",
-        description: "Sales tracking",
-        icon: BarChart
-      }
-    ],
-    process: [
-      {
-        title: "Planning",
-        description: "Store architecture",
-        duration: "2 weeks"
-      },
-      {
-        title: "Design",
-        description: "Store design",
-        duration: "3 weeks"
-      },
-      {
-        title: "Development",
-        description: "Store building",
-        duration: "6-8 weeks"
-      },
-      {
-        title: "Testing",
-        description: "Quality assurance",
-        duration: "2 weeks"
-      }
-    ],
-    technologies: [
-      {
-        name: "Shopify",
-        icon: "/images/tech/shopify.svg"
-      },
-      {
-        name: "WooCommerce",
-        icon: "/images/tech/woocommerce.svg"
-      },
-      {
-        name: "Stripe",
-        icon: "/images/tech/stripe.svg"
-      }
-    ],
-    faqs: [
-      {
-        question: "Which platform is best for me?",
-        answer: "We'll recommend the best platform based on your specific needs, scale, and budget."
-      },
-      {
-        question: "Can you handle migrations?",
-        answer: "Yes, we can migrate your existing store to a new platform while preserving all data."
-      },
-      {
-        question: "What payment gateways do you support?",
-        answer: "We integrate with all major payment providers including Stripe, PayPal, and Square."
-      }
-    ],
-    caseStudies: [
-      {
-        title: "Fashion Store Launch",
-        description: "Custom e-commerce solution",
-        metrics: [
-          { label: "Sales Growth", value: "+300%" },
-          { label: "Cart Completion", value: "75%" },
-          { label: "Mobile Orders", value: "65%" }
-        ],
-        image: "/images/case-studies/ecommerce-launch.jpg"
-      }
-    ]
-  },
-  {
-    id: 'content-creation',
-    label: 'Content Creation',
-    icon: MessageSquare,
-    hero: {
-      title: "Strategic Content Creation",
-      description: "Engage your audience with compelling content",
-      image: "/images/services/content-hero.jpg"
-    },
-    overview: {
-      title: "Professional Content Development",
-      description: "We create engaging content that tells your story and connects with your audience.",
-      keyPoints: [
-        "Website copywriting",
-        "Blog content",
-        "Visual content",
-        "Content strategy"
-      ]
-    },
-    features: [
-      {
-        title: "Web Copy",
-        description: "Engaging website content",
+        title: "Content Management",
+        description: "Regular content updates and management",
         icon: Layout
       },
       {
-        title: "Blog Posts",
-        description: "Regular articles",
-        icon: MessageSquare
-      },
-      {
-        title: "Visual Content",
-        description: "Graphics and images",
-        icon: Paintbrush
-      },
-      {
-        title: "Strategy",
-        description: "Content planning",
-        icon: Search
+        title: "Backup Services",
+        description: "Regular site and database backups",
+        icon: Database
       }
     ],
     process: [
       {
-        title: "Research",
-        description: "Topic research",
+        title: "Initial Audit",
+        description: "Website health assessment",
         duration: "1 week"
       },
       {
-        title: "Planning",
-        description: "Content calendar",
+        title: "Setup",
+        description: "Establishing monitoring and backup systems",
         duration: "1 week"
       },
       {
-        title: "Creation",
-        description: "Content development",
-        duration: "Ongoing"
+        title: "Regular Maintenance",
+        description: "Scheduled updates and checks",
+        duration: "Monthly"
       },
       {
-        title: "Review",
-        description: "Quality check",
-        duration: "Ongoing"
+        title: "Support",
+        description: "Ongoing technical assistance",
+        duration: "As needed"
       }
     ],
     technologies: [
@@ -745,38 +580,163 @@ export const serviceCategories = [
         icon: "/images/tech/wordpress.svg"
       },
       {
-        name: "Canva",
-        icon: "/images/tech/canva.svg"
+        name: "CloudFlare",
+        icon: "/images/tech/cloudflare.svg"
       },
       {
-        name: "Grammarly",
-        icon: "/images/tech/grammarly.svg"
+        name: "Google Analytics",
+        icon: "/images/tech/google-analytics.svg"
+      },
+      {
+        name: "Uptime Robot",
+        icon: "/images/tech/uptime-robot.svg"
       }
     ],
     faqs: [
       {
-        question: "How often is content delivered?",
-        answer: "We create custom content schedules based on your needs, typically weekly or monthly."
+        question: "What's included in website maintenance?",
+        answer: "Our maintenance includes software updates, security monitoring, regular backups, performance optimization, and technical support."
       },
       {
-        question: "What types of content do you create?",
-        answer: "We create website copy, blog posts, articles, social media content, and marketing materials."
+        question: "How often do you perform updates?",
+        answer: "We perform security updates immediately when available, and other updates on a scheduled monthly basis."
       },
       {
-        question: "Do you handle distribution?",
-        answer: "Yes, we can help distribute content across your website, social media, and email channels."
+        question: "Do you monitor website uptime?",
+        answer: "Yes, we use automated monitoring to alert us of any downtime so we can address issues promptly."
+      },
+      {
+        question: "Can you help with content updates?",
+        answer: "Yes, our maintenance plans include a set number of content updates each month, with additional updates available as needed."
       }
     ],
     caseStudies: [
       {
-        title: "Content Marketing Success",
-        description: "Comprehensive content strategy",
+        title: "E-Commerce Maintenance Success",
+        description: "Ongoing maintenance preventing issues and optimizing performance",
         metrics: [
-          { label: "Organic Traffic", value: "+180%" },
-          { label: "Engagement", value: "+95%" },
-          { label: "Lead Generation", value: "+150%" }
+          { label: "Uptime", value: "99.9%" },
+          { label: "Page Speed", value: "+45%" },
+          { label: "Security Incidents", value: "0" }
         ],
-        image: "/images/case-studies/content-success.jpg"
+        image: "/images/case-studies/maintenance-case.jpg"
+      }
+    ]
+  },
+  {
+    id: 'content-migration',
+    label: 'Content Migration',
+    icon: Database,
+    hero: {
+      title: "Professional Content Migration",
+      description: "Seamlessly transfer your website content to a new platform or redesigned site",
+      image: "/images/services/migration-hero.jpg"
+    },
+    overview: {
+      title: "Expert Content Migration Services",
+      description: "We handle the complex process of transferring your valuable content to new platforms while preserving structure, formatting, and SEO value.",
+      keyPoints: [
+        "Complete content transfer",
+        "Structure and formatting preservation",
+        "SEO value retention",
+        "Proper redirects implementation"
+      ]
+    },
+    features: [
+      {
+        title: "Data Extraction",
+        description: "Comprehensive content collection",
+        icon: Database
+      },
+      {
+        title: "Content Mapping",
+        description: "Organizing content for new structure",
+        icon: Layout
+      },
+      {
+        title: "SEO Preservation",
+        description: "Maintaining search engine rankings",
+        icon: Search
+      },
+      {
+        title: "Redirect Setup",
+        description: "Proper URL redirection",
+        icon: RefreshCw
+      }
+    ],
+    process: [
+      {
+        title: "Content Audit",
+        description: "Analyzing existing content",
+        duration: "1-2 weeks"
+      },
+      {
+        title: "Planning",
+        description: "Migration strategy development",
+        duration: "1 week"
+      },
+      {
+        title: "Extraction",
+        description: "Content collection and organization",
+        duration: "1-2 weeks"
+      },
+      {
+        title: "Migration",
+        description: "Transferring to new platform",
+        duration: "1-3 weeks"
+      },
+      {
+        title: "QA Testing",
+        description: "Verification and quality assurance",
+        duration: "1 week"
+      }
+    ],
+    technologies: [
+      {
+        name: "WordPress",
+        icon: "/images/tech/wordpress.svg"
+      },
+      {
+        name: "MySQL",
+        icon: "/images/tech/mysql.svg"
+      },
+      {
+        name: "CSV Tools",
+        icon: "/images/tech/csv.svg"
+      },
+      {
+        name: "Custom Scripts",
+        icon: "/images/tech/code.svg"
+      }
+    ],
+    faqs: [
+      {
+        question: "Can you migrate from any platform?",
+        answer: "Yes, we can migrate content from virtually any CMS or website platform to your new solution."
+      },
+      {
+        question: "Will migration affect my SEO?",
+        answer: "With proper implementation, migration should maintain or improve SEO. We use proper redirects and preserve content structure to minimize any negative impact."
+      },
+      {
+        question: "How long does content migration take?",
+        answer: "Migration time depends on the amount of content, but typically takes 2-4 weeks for medium-sized websites."
+      },
+      {
+        question: "Will all my content be preserved?",
+        answer: "Yes, we ensure all your valuable content is properly transferred, including images, videos, downloads, and specialized content types."
+      }
+    ],
+    caseStudies: [
+      {
+        title: "Enterprise Platform Migration",
+        description: "Large-scale content migration to new CMS",
+        metrics: [
+          { label: "Content Preserved", value: "100%" },
+          { label: "SEO Rankings", value: "Maintained" },
+          { label: "Migration Time", value: "50% faster than estimated" }
+        ],
+        image: "/images/case-studies/migration-case.jpg"
       }
     ]
   }

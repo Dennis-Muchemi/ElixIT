@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Code, Globe, ShoppingCart, Cpu } from 'lucide-react';
+import { Code, Layout, RefreshCw, Search, Wrench, Database } from 'lucide-react';
 import Link from 'next/link';
 
 const ServicesSection = () => {
@@ -16,10 +16,10 @@ const ServicesSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
             Transforming Ideas Into
-            <span className="text-teal-600"> Digital Success</span>
+            <span className="text-teal-600"> Custom Websites</span>
           </h2>
           <p className="text-lg text-slate-600">
-            We offer comprehensive digital solutions tailored to your business needs.
+            Expert web development solutions tailored to your business needs.
           </p>
         </div>
 
@@ -99,98 +99,98 @@ const ServiceCard = ({ title, description, icon, features, titleLink, index }: S
 
 const services = [
   {
-    title: 'Web Design & Development',
-    description: 'Custom websites and applications that combine stunning design with powerful functionality.',
+    title: 'Custom Website Development',
+    description: 'Hand-coded websites built from scratch for unique functionality and optimal performance.',
     icon: <Code className="w-6 h-6 text-teal-600" />,
-    titleLink: '/services/web-development',
+    titleLink: '/services/custom-web-development',
     features: [
       {
-        text: 'Custom Website & App Development',
-        link: '/services/web-development'
-      },
-      {
-        text: 'Responsive UI/UX Design',
-        link: '/services/ui-ux-design'
-      },
-      {
-        text: 'CMS Integration',
-        link: '/services/web-development#cms'
+        text: 'Custom Functionality',
+        link: '/services/custom-web-development'
       },
       {
         text: 'Performance Optimization',
-        link: '/services/technical-services#performance'
+        link: '/services/custom-web-development#performance'
+      },
+      {
+        text: 'Responsive Design',
+        link: '/services/custom-web-development#responsive'
+      },
+      {
+        text: 'Technical Expertise',
+        link: '/services/custom-web-development#expertise'
       }
     ]
   },
   {
-    title: 'Brand & Digital Strategy',
-    description: 'Comprehensive branding and digital solutions to establish your market presence.',
-    icon: <Globe className="w-6 h-6 text-teal-600" />,
-    titleLink: '/services/branding',
+    title: 'WordPress Development',
+    description: 'Custom WordPress websites with powerful functionality and easy content management.',
+    icon: <Layout className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/wordpress-development',
     features: [
       {
-        text: 'Brand Identity Development',
-        link: '/services/branding'
+        text: 'Custom Theme Development',
+        link: '/services/wordpress-development#themes'
       },
       {
-        text: 'Digital Strategy',
-        link: '/services/branding#strategy'
+        text: 'Plugin Integration',
+        link: '/services/wordpress-development#plugins'
       },
       {
-        text: 'Content Strategy',
-        link: '/services/content-creation'
+        text: 'WooCommerce Solutions',
+        link: '/services/wordpress-development#woocommerce'
       },
       {
-        text: 'Marketing Collateral',
-        link: '/services/branding#collateral'
+        text: 'Easy Content Management',
+        link: '/services/wordpress-development#cms'
       }
     ]
   },
   {
-    title: 'Technical Services',
-    description: 'Expert technical solutions to keep your digital presence secure and efficient.',
-    icon: <Cpu className="w-6 h-6 text-teal-600" />,
-    titleLink: '/services/technical-services',
+    title: 'Website Redesign',
+    description: 'Transform your outdated website into a modern, high-performing digital asset.',
+    icon: <RefreshCw className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/website-redesign',
     features: [
       {
-        text: 'Hosting & Domain Management',
-        link: '/services/technical-services#hosting'
+        text: 'Modern Design Implementation',
+        link: '/services/website-redesign#design'
       },
       {
-        text: 'Security Implementation',
-        link: '/services/technical-services#security'
+        text: 'User Experience Improvements',
+        link: '/services/website-redesign#ux'
+      },
+      {
+        text: 'Mobile Responsiveness',
+        link: '/services/website-redesign#mobile'
       },
       {
         text: 'Performance Optimization',
-        link: '/services/technical-services#performance'
-      },
-      {
-        text: 'Technical Maintenance',
-        link: '/services/technical-services#maintenance'
+        link: '/services/website-redesign#performance'
       }
     ]
   },
   {
-    title: 'Digital Solutions',
-    description: 'Integrated digital solutions including e-commerce and content management.',
-    icon: <ShoppingCart className="w-6 h-6 text-teal-600" />,
-    titleLink: '/services/ecommerce',
+    title: 'Additional Services',
+    description: 'Comprehensive support for your website needs, from optimization to maintenance.',
+    icon: <Wrench className="w-6 h-6 text-teal-600" />,
+    titleLink: '/services/seo-optimization',
     features: [
       {
-        text: 'E-commerce Development',
-        link: '/services/ecommerce'
+        text: 'SEO Optimization',
+        link: '/services/seo-optimization'
       },
       {
-        text: 'Content Management Systems',
-        link: '/services/web-development#cms'
+        text: 'Website Maintenance',
+        link: '/services/website-maintenance'
       },
       {
-        text: 'Digital Marketing Integration',
-        link: '/services/digital-marketing'
+        text: 'Content Migration',
+        link: '/services/content-migration'
       },
       {
-        text: 'Analytics & Reporting',
-        link: '/services/analytics'
+        text: 'Technical Support',
+        link: '/services/website-maintenance#support'
       }
     ]
   }
