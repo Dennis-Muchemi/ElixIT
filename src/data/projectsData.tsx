@@ -53,7 +53,7 @@ export const projects: Project[] = [
     id: 1,
     title: "La Maison D'Or Restaurant Website",
     description: "A sophisticated fine dining restaurant website featuring an elegant design system, interactive booking system, and immersive user experience.",
-    image: "/La_Maison_D'Or_photos/image_1_a.jpg",
+    image: "/La_Maison_Dor/project_1_home.jpg",
     category: "Food & Hospitality",
     technologies: [
       "HTML5", 
@@ -141,23 +141,23 @@ export const projects: Project[] = [
       },
       gallery: [
         {
-          image: "/La_Maison_D'Or_photos/image_1_a.jpg",
-          caption: "Homepage Hero Section",
+          image: "/La_Maison_Dor/project_1_home.jpg",
+          caption: "",
           alt: "La Maison D'Or homepage featuring elegant hero slider"
         },
         {
-          image: "/La_Maison_D'Or_photos/image_8.jpg",
-          caption: "Interactive Menu Gallery",
+          image: "/La_Maison_Dor/project_1_menu.jpg",
+          caption: "",
           alt: "Interactive menu presentation with visual effects"
         },
         {
-          image: "/La_Maison_D'Or_photos/image_14.jpg",
-          caption: "Reservation System",
+          image: "/La_Maison_Dor/project_1_booking.jpg",
+          caption: "",
           alt: "Streamlined booking interface"
         },
         {
-          image: "/La_Maison_D'Or_photos/image_3_b.jpg",
-          caption: "Mobile Experience",
+          image: "/La_Maison_Dor/project_1_mobile_2.jpg",
+          caption: "",
           alt: "Responsive design on mobile devices"
         }
       ],
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Harmony Wellness Center Website",
     description: "A dynamic wellness center website featuring an interactive class scheduling system, seamless user experience, and comprehensive content management capabilities.",
-    image: "/Harmony_wellness_center_photos/image_2_c.jpg",
+    image: "/harmony/home_1.jpg",
     category: "Health & Wellness",
     technologies: [
       "HTML5",
@@ -273,23 +273,23 @@ export const projects: Project[] = [
       },
       gallery: [
         {
-          image: "/Harmony_wellness_center_photos/image_2_c.jpg",
-          caption: "Homepage Hero Section",
+          image: "/harmony/home_2.jpg",
+          caption: "",
           alt: "Harmony Wellness Center homepage featuring class schedule"
         },
         {
-          image: "/Harmony_wellness_center_photos/image_8.jpg",
-          caption: "Class Booking Interface",
+          image: "/harmony/booking.jpg",
+          caption: "",
           alt: "Interactive class booking system"
         },
         {
-          image: "/Harmony_wellness_center_photos/image_14.jpg",
-          caption: "Instructor Profiles",
+          image: "/harmony/instructor.jpg",
+          caption: "",
           alt: "Dynamic instructor profile display"
         },
         {
-          image: "/Harmony_wellness_center_photos/image_4_a.jpg",
-          caption: "Mobile Experience",
+          image: "/harmony/mobile.jpg",
+          caption: "",
           alt: "Responsive design on mobile devices"
         }
       ],
@@ -317,7 +317,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Chic & Style Boutique Website",
     description: "A luxury fashion e-commerce website featuring elegant animations, interactive product displays, and sophisticated user experience design.",
-    image: "/boutique_photos/image_1.jpg",
+    image: "/fashion/home_1.jpg",
     category: "E-commerce",
     technologies: [
       "HTML5",
@@ -401,27 +401,27 @@ export const projects: Project[] = [
         author: "Emma Richardson",
         position: "Marketing Director",
         company: "Chic & Style Boutique",
-        image: "/boutique_photos/image_9.jpg"
+        image: "/fashion/home_1.jpg"
       },
       gallery: [
         {
-          image: "/boutique_photos/image_1.jpg",
-          caption: "Homepage Hero Section",
+          image: "/fashion/home_2.jpg",
+          caption: "",
           alt: "Chic & Style Boutique homepage featuring elegant slider"
         },
         {
-          image: "/boutique_photos/image_4_b.jpg",
-          caption: "Category Display",
+          image: "/fashion/category.jpg",
+          caption: "",
           alt: "Interactive category display with hover effects"
         },
         {
-          image: "/boutique_photos/image_15.jpg",
-          caption: "Product Showcase",
+          image: "/fashion/products.jpg",
+          caption: "",
           alt: "Product showcase with flip animation"
         },
         {
-          image: "/boutique_photos/image_16.jpg",
-          caption: "Style Quiz Feature",
+          image: "/fashion/quiz.jpg",
+          caption: "",
           alt: "Interactive style quiz interface"
         }
       ],
@@ -449,7 +449,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Elite Home Services Website",
     description: "A modern, high-performance website for a professional home services company featuring dynamic animations, interactive service booking, and real-time quote calculation.",
-    image: "/elite_home_serv_photos/image_19_b.jpg",
+    image: "/elite/home.jpg",
     category: "Service Business",
     technologies: [
       "HTML5",
@@ -539,23 +539,23 @@ export const projects: Project[] = [
       },
       gallery: [
         {
-          image: "/elite_home_serv_photos/image_19_b.jpg",
-          caption: "Homepage Hero Section",
+          image: "/elite/home.jpg",
+          caption: "",
           alt: "Elite Home Services homepage featuring service showcases"
         },
         {
-          image: "/elite_home_serv_photos/image_5_b.jpg",
-          caption: "Services Section",
+          image: "/elite/services.jpg",
+          caption: "",
           alt: "Interactive services grid layout"
         },
         {
-          image: "/elite_home_serv_photos/image_7_b.jpg",
-          caption: "Quote Calculator",
+          image: "/elite/quote.jpg",
+          caption: "",
           alt: "Real-time service quote calculator interface"
         },
         {
-          image: "/elite_home_serv_photos/image_18.jpg",
-          caption: "Contact Section",
+          image: "/elite/mobile.jpg",
+          caption: "",
           alt: "Contact information and form display"
         }
       ],
@@ -583,7 +583,7 @@ export const projects: Project[] = [
   id: 5,
   title: "Sweet Delights Bakery Website",
   description: "An elegant bakery website featuring sophisticated animations, interactive product displays, and a seamless ordering system with real-time updates.",
-  image: "/bakery_photos/artisan_sourdough.jpg",
+  image: "/bakery/home.jpg",
   category: "Food & Restaurant",
   technologies: [
     "HTML5",
@@ -672,23 +672,23 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        image: "/bakery_photos/artisan_sourdough.jpg",
-        caption: "Homepage Hero Section",
+        image: "/bakery/home.jpg",
+        caption: "",
         alt: "Sweet Delights homepage featuring daily specials"
       },
       {
-        image: "/bakery_photos/croissant_on_bag.jpg",
-        caption: "Product Carousel",
+        image: "/bakery/products.jpg",
+        caption: "",
         alt: "Interactive product showcase system"
       },
       {
-        image: "/bakery_photos/kneading.jpg",
-        caption: "Blog Section",
+        image: "/bakery/recipe.jpg",
+        caption: "",
         alt: "Engaging blog and recipe content"
       },
       {
-        image: "/bakery_photos/baker.jpg",
-        caption: "About Section",
+        image: "/bakery/mobile.jpg",
+        caption: "",
         alt: "Team and bakery story presentation"
       }
     ],

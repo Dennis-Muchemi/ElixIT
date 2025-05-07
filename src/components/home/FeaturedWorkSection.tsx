@@ -155,7 +155,7 @@ const projects = [
     projectId: "2",  
     title: "Harmony Wellness Center Website",
     category: "Health & Wellness",
-    image: "/Harmony_wellness_center_photos/image_2_c.jpg",
+    image: "/common/harmony_cover.jpg",
     description: "A dynamic wellness center website featuring an interactive class scheduling system, seamless user experience, and comprehensive content management capabilities.",
     stats: [
       { value: "--", label: "Bookings" },
@@ -168,7 +168,7 @@ const projects = [
     projectId: "3",  
     title: "Chic & Style Boutique Website",
     category: "E-commerce",
-    image: "/boutique_photos/image_1.jpg",
+    image: "/common/chic_cover.jpg",
     description: "A luxury fashion e-commerce website featuring elegant animations, interactive product displays, and sophisticated user experience design.",
     stats: [
       { value: "--", label: "Engagement" },
@@ -181,7 +181,7 @@ const projects = [
     projectId: "4",  
     title: "Elite Home Services Website",
     category: "Service Business",
-    image: "/elite_home_serv_photos/image_19_b.jpg",
+    image: "/common/elite_cover.jpg",
     description: "A modern, high-performance website for a professional home services company featuring dynamic animations, interactive service booking, and real-time quote calculation.",
     stats: [
       { value: "--", label: "Bookings" },

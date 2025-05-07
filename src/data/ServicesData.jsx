@@ -279,7 +279,7 @@ export const serviceCategories = [
     hero: {
       title: "Website Redesign Services",
       description: "Transform your outdated website into a modern, high-performing digital asset",
-      image: "/images/services/redesign-hero.jpg"
+      image: "/Services/website_redesign.jpg"
     },
     overview: {
       title: "Modernizing Outdated Websites",
@@ -348,19 +348,19 @@ export const serviceCategories = [
     technologies: [
       {
         name: "HTML5",
-        icon: "/images/tech/html5.svg"
+        icon: "/common/html_2.jpg"
       },
       {
         name: "CSS3",
-        icon: "/images/tech/css3.svg"
+        icon: "/common/css_1.png"
       },
       {
         name: "WordPress",
-        icon: "/images/tech/wordpress.svg"
+        icon: "/common/wordpress_logo.png"
       },
       {
         name: "JavaScript",
-        icon: "/images/tech/javascript.svg"
+        icon: "/common/javascript_1.png"
       }
     ],
     faqs: [
@@ -401,7 +401,7 @@ export const serviceCategories = [
     hero: {
       title: "Website SEO Optimization",
       description: "Improve your search rankings and drive more targeted traffic to your website",
-      image: "/images/services/seo-hero.jpg"
+      image: "/Services/SEO_3.webp"
     },
     overview: {
       title: "Comprehensive SEO Solutions",
@@ -465,19 +465,19 @@ export const serviceCategories = [
     technologies: [
       {
         name: "Google Analytics",
-        icon: "/images/tech/google-analytics.svg"
+        icon: "/common/google_analytics.jpg"
       },
       {
         name: "SEMrush",
-        icon: "/images/tech/semrush.svg"
+        icon: "/common/semrush.jpg"
       },
       {
         name: "Ahrefs",
-        icon: "/images/tech/ahrefs.svg"
+        icon: "/common/ahrefs.jpg"
       },
       {
         name: "Google Search Console",
-        icon: "/images/tech/search-console.svg"
+        icon: "/common/google_search_console.png"
       }
     ],
     faqs: [
@@ -507,7 +507,7 @@ export const serviceCategories = [
           { label: "First-Page Keywords", value: "+450%" },
           { label: "Lead Generation", value: "+85%" }
         ],
-        image: "/images/case-studies/seo-case.jpg"
+        image: "/Services/SEO_3.webp"
       }
     ]
   },
@@ -518,7 +518,7 @@ export const serviceCategories = [
     hero: {
       title: "Professional Website Maintenance",
       description: "Keep your website secure, up-to-date, and performing at its best",
-      image: "/images/services/maintenance-hero.jpg"
+      image: "/Services/website_maintenance.jpeg"
     },
     overview: {
       title: "Comprehensive Website Care",
@@ -577,19 +577,19 @@ export const serviceCategories = [
     technologies: [
       {
         name: "WordPress",
-        icon: "/images/tech/wordpress.svg"
+        icon: "/common/wordpress_logo.png"
       },
       {
         name: "CloudFlare",
-        icon: "/images/tech/cloudflare.svg"
+        icon: "/common/cloudflare.jpg"
       },
       {
         name: "Google Analytics",
-        icon: "/images/tech/google-analytics.svg"
+        icon: "/common/google_analytics.jpg"
       },
       {
         name: "Uptime Robot",
-        icon: "/images/tech/uptime-robot.svg"
+        icon: "/common/uptime_robot.png"
       }
     ],
     faqs: [
@@ -630,7 +630,7 @@ export const serviceCategories = [
     hero: {
       title: "Professional Content Migration",
       description: "Seamlessly transfer your website content to a new platform or redesigned site",
-      image: "/images/services/migration-hero.jpg"
+      image: "/Services/data-migration.jpg"
     },
     overview: {
       title: "Expert Content Migration Services",
@@ -694,19 +694,19 @@ export const serviceCategories = [
     technologies: [
       {
         name: "WordPress",
-        icon: "/images/tech/wordpress.svg"
+        icon: "/common/wordpress_logo.png"
       },
       {
         name: "MySQL",
-        icon: "/images/tech/mysql.svg"
+        icon: "/common/mysql.png"
       },
       {
         name: "CSV Tools",
-        icon: "/images/tech/csv.svg"
+        icon: "/common/csv.jpg"
       },
       {
         name: "Custom Scripts",
-        icon: "/images/tech/code.svg"
+        icon: "/common/Custom_Script.png"
       }
     ],
     faqs: [
