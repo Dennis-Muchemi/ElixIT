@@ -23,14 +23,16 @@ export default function ServicePage() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-col">
       <NavigationBar />
-      <ServicesHero service={service} />
-      <ServiceCategories activeServiceId={service.id} />
-      <ServiceDetails service={service} />
-      <ProcessTimeline service={service} />
-      <FAQSection service={service} />
-      <CTASection />
+      <div className="space-y-1"> {/* Controls spacing between main sections */}
+        <ServicesHero service={service} />
+        <ServiceCategories activeServiceId={service.id} />
+        <ServiceDetails service={service} />
+        <ProcessTimeline service={service} />
+        <FAQSection service={service} />
+        <CTASection />
+      </div>
       <Footer />
     </main>
   )

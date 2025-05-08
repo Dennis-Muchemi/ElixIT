@@ -54,10 +54,10 @@ const ClientSuccessSection = () => {
           }}
         />
       </div>
-
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Stats Grid with fade-in and slide-up animations */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+        {/*<div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div 
               key={index}
@@ -75,7 +75,7 @@ const ClientSuccessSection = () => {
             </div>
           ))}
         </div>
-
+        */}
         {/* Section Header with fade-in animation */}
         <div 
           className={`max-w-3xl mx-auto text-center mb-16 transform transition-all duration-700 ${
@@ -88,10 +88,10 @@ const ClientSuccessSection = () => {
             <span className="text-slate-600 text-sm font-medium uppercase tracking-wider">Client Success</span>
           </div>
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
-            Trusted by Leading Brands
+            Trusted by Brands & Businesses
           </h2>
           <p className="text-lg text-slate-600">
-            Hear from our clients about their transformative journey with ElixIT.
+            Hear from our client about their transformative journey with ElixIT.
           </p>
         </div>
 
@@ -201,40 +201,29 @@ const ClientSuccessSection = () => {
   );
 };
 
+/*
 const stats = [
   { value: "--", label: "Client Satisfaction" },
   { value: "--", label: "Projects Delivered" },
   { value: "--", label: "Industry Awards" },
   { value: "--", label: "Years Experience" }
 ];
-
+*/
 const testimonials = [
   {
-    content: "ElixIT transformed our online presence completely. Their attention to detail and innovative solutions helped us achieve a 200% increase in user engagement.",
-    name: "Sarah Johnson",
-    position: "--",
-    avatar: "/api/placeholder/100/100"
-  },
-  {
-    content: "Working with ElixIT was a game-changer for our business. Their team's expertise and dedication to excellence delivered results beyond our expectations.",
-    name: "Michael Chen",
-    position: "--",
-    avatar: "/api/placeholder/100/100"
-  },
-  {
-    content: "The team at ElixIT doesn't just build websites, they create digital experiences that drive real business results. They're truly partners in our success.",
-    name: "Emma Davis",
-    position: "--",
+    content: "ElixIT transformed our online presence completely. I loved their services and the results were phenomenal.",
+    name: "Mary Nduta",
+    position: "CEO - Bryma Properties",
     avatar: "/api/placeholder/100/100"
   }
 ];
 
 const clientLogos = [
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100",
-  "/api/placeholder/200/100"
+  "/common/italian_logo_1.jpg",
+  "/common/chic_logo.jpg",
+  "/common/harmony_logo.jpg",
+  "/common/elite_logo.jpg",
+  "/common/bakery_logo.jpg"
 ];
 
 export default ClientSuccessSection;

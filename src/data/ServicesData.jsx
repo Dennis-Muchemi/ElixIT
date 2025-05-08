@@ -26,10 +26,10 @@ export const heroContent = {
 export const serviceCategories = [
   {
     id: 'custom-web-development',
-    label: 'Custom Website Development',
+    label: 'Website Development',
     icon: Code,
     hero: {
-      title: "Custom Website Development",
+      title: "Custom",
       description: "Hand-coded websites built from scratch for unique functionality and performance",
       image: "/Services/custom_website_1.jpg"
     },
@@ -69,32 +69,32 @@ export const serviceCategories = [
       {
         title: "Discovery",
         description: "Understanding your requirements",
-        duration: "1 week"
+        duration: "1 day"
       },
       {
         title: "Planning",
         description: "Architecture and technical planning",
-        duration: "1-2 weeks"
+        duration: "1 day"
       },
       {
         title: "Design",
         description: "Creating visual mockups",
-        duration: "2-3 weeks"
+        duration: "3-4 days"
       },
       {
         title: "Development",
         description: "Hand-coding your website",
-        duration: "4-6 weeks"
+        duration: "4-6 days"
       },
       {
         title: "Testing",
         description: "Quality assurance across devices",
-        duration: "1 week"
+        duration: "1 day"
       },
       {
         title: "Launch",
         description: "Deployment and going live",
-        duration: "1 week"
+        duration: "1 day"
       }
     ],
     technologies: [
@@ -113,10 +113,6 @@ export const serviceCategories = [
       {
         name: "React",
         icon: "/common/react_3.png"
-      },
-      {
-        name: "Next.js",
-        icon: "/common/next_1.png"
       }
     ],
     faqs: [
@@ -126,7 +122,7 @@ export const serviceCategories = [
       },
       {
         question: "How long does a custom website take to build?",
-        answer: "A typical custom website takes 8-12 weeks from start to finish, depending on complexity."
+        answer: "A typical custom website takes 10 - 14 days from start to finish, and sometimes weeks depending on complexity."
       },
       {
         question: "Is custom coding more expensive than using builders?",
@@ -155,7 +151,7 @@ export const serviceCategories = [
     label: 'WordPress Development',
     icon: Layout,
     hero: {
-      title: "Professional WordPress Development",
+      title: "Professional",
       description: "Custom WordPress websites with powerful functionality and easy content management",
       image: "/Services/wordpress_3.png"
     },
@@ -195,32 +191,32 @@ export const serviceCategories = [
       {
         title: "Discovery",
         description: "Understanding your needs",
-        duration: "1 week"
+        duration: "1 day"
       },
       {
         title: "Design",
         description: "Creating your WordPress theme",
-        duration: "2-3 weeks"
+        duration: "2-3 days"
       },
       {
         title: "Development",
         description: "Building your custom WordPress site",
-        duration: "3-5 weeks"
+        duration: "3-5 days"
       },
       {
         title: "Plugin Setup",
         description: "Configuring functionality",
-        duration: "1-2 weeks"
+        duration: "1-2 days"
       },
       {
         title: "Testing",
         description: "Quality assurance",
-        duration: "1 week"
+        duration: "1 day"
       },
       {
         title: "Launch & Training",
         description: "Going live and teaching you to manage content",
-        duration: "1 week"
+        duration: "1 day"
       }
     ],
     technologies: [
@@ -274,10 +270,10 @@ export const serviceCategories = [
   },
   {
     id: 'website-redesign',
-    label: 'Website Redesign',
+    label: 'Redesign Services',
     icon: RefreshCw,
     hero: {
-      title: "Website Redesign Services",
+      title: "Website",
       description: "Transform your outdated website into a modern, high-performing digital asset",
       image: "/Services/website_redesign.jpg"
     },
@@ -317,32 +313,32 @@ export const serviceCategories = [
       {
         title: "Site Audit",
         description: "Evaluating current website",
-        duration: "1 week"
+        duration: "1 day"
       },
       {
         title: "Planning",
         description: "Mapping improvements",
-        duration: "1-2 weeks"
+        duration: "1-2 days"
       },
       {
         title: "Design",
         description: "Creating new visual direction",
-        duration: "2-3 weeks"
+        duration: "3 - 4 days"
       },
       {
         title: "Development",
         description: "Building the redesigned site",
-        duration: "3-6 weeks"
+        duration: "5 - 6 days"
       },
       {
         title: "Content Migration",
         description: "Moving and updating content",
-        duration: "1-2 weeks"
+        duration: "1 week"
       },
       {
         title: "Launch",
         description: "Going live with the new site",
-        duration: "1 week"
+        duration: "1 - 2 days"
       }
     ],
     technologies: [
@@ -378,7 +374,7 @@ export const serviceCategories = [
       },
       {
         question: "How long does a website redesign take?",
-        answer: "Most redesigns take 6-10 weeks, depending on the size and complexity of your current site."
+        answer: "Most redesigns take 4-8 weeks, depending on the size and complexity of your current site."
       }
     ],
     caseStudies: [
@@ -399,7 +395,7 @@ export const serviceCategories = [
     label: 'SEO Optimization',
     icon: Search,
     hero: {
-      title: "Website SEO Optimization",
+      title: "Website",
       description: "Improve your search rankings and drive more targeted traffic to your website",
       image: "/Services/SEO_3.webp"
     },
@@ -439,17 +435,17 @@ export const serviceCategories = [
       {
         title: "SEO Audit",
         description: "Comprehensive site evaluation",
-        duration: "1-2 weeks"
+        duration: "1-2 days"
       },
       {
         title: "Strategy",
         description: "Custom SEO plan development",
-        duration: "1 week"
+        duration: "1 day"
       },
       {
         title: "Implementation",
         description: "Applying technical improvements",
-        duration: "2-4 weeks"
+        duration: "2-4 days"
       },
       {
         title: "Content Optimization",
@@ -491,7 +487,7 @@ export const serviceCategories = [
       },
       {
         question: "Do you guarantee first-page rankings?",
-        answer: "No reputable SEO company can guarantee rankings. We implement best practices that have consistently improved rankings for our clients."
+        answer: "No reputable SEO company can guarantee rankings. We implement best practices that consistently improve rankings for our clients."
       },
       {
         question: "Do you provide SEO reports?",
@@ -516,7 +512,7 @@ export const serviceCategories = [
     label: 'Website Maintenance',
     icon: Wrench,
     hero: {
-      title: "Professional Website Maintenance",
+      title: "Professional",
       description: "Keep your website secure, up-to-date, and performing at its best",
       image: "/Services/website_maintenance.jpeg"
     },
@@ -556,7 +552,7 @@ export const serviceCategories = [
       {
         title: "Initial Audit",
         description: "Website health assessment",
-        duration: "1 week"
+        duration: "1 -3 days"
       },
       {
         title: "Setup",
@@ -628,7 +624,7 @@ export const serviceCategories = [
     label: 'Content Migration',
     icon: Database,
     hero: {
-      title: "Professional Content Migration",
+      title: "Professional",
       description: "Seamlessly transfer your website content to a new platform or redesigned site",
       image: "/Services/data-migration.jpg"
     },
@@ -668,22 +664,22 @@ export const serviceCategories = [
       {
         title: "Content Audit",
         description: "Analyzing existing content",
-        duration: "1-2 weeks"
+        duration: "1 week"
       },
       {
         title: "Planning",
         description: "Migration strategy development",
-        duration: "1 week"
+        duration: "1 -3 days"
       },
       {
         title: "Extraction",
         description: "Content collection and organization",
-        duration: "1-2 weeks"
+        duration: "1 week"
       },
       {
         title: "Migration",
         description: "Transferring to new platform",
-        duration: "1-3 weeks"
+        duration: "1 week"
       },
       {
         title: "QA Testing",

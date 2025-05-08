@@ -28,7 +28,7 @@ export function ProcessTimeline({ service }: { service: ServiceProps }) {
 
         <div className="relative">
           <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-slate-200 -translate-y-1/2" />
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
             {service.process.map((step, index) => (
               <motion.div
                 key={step.title}

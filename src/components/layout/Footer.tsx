@@ -42,10 +42,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-lg font-semibold mb-6">Services</h3>
             <div className="space-y-4">
-              <FooterLink href="/services/web-design" text="Web Design" />
-              <FooterLink href="/services/development" text="Development" />
-              <FooterLink href="/services/ecommerce" text="E-commerce" />
-              <FooterLink href="/services/branding" text="Branding" />
+              <FooterLink href="/services/custom-web-development" text="Custom Website Development" />
+              <FooterLink href="/services/wordpress-development" text="Wordpress Development" />
+              <FooterLink href="/services/website-redesign" text="Website redesign" />
+              <FooterLink href="/services/seo-optimization" text="Other Services" />
             </div>
           </div>
 
@@ -61,10 +61,12 @@ const Footer = () => {
                 icon={<Phone className="w-5 h-5" />}
                 text="+1 (234) 567-890"
               />
+              {/*}
               <ContactInfo 
                 icon={<MapPin className="w-5 h-5" />}
                 text="123 Design Street, Creative City, CD 12345"
               />
+              */}
             </div>
           </div>
         </div>

@@ -104,7 +104,7 @@ export function ServiceDetails({ service }: ServiceDetailsProps) {
           <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
             Technologies We Use
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-1">
             {service.technologies.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -116,7 +116,7 @@ export function ServiceDetails({ service }: ServiceDetailsProps) {
                 <img
                   src={tech.icon}
                   alt={tech.name}
-                  className="w-16 h-16 object-contain mb-2"
+                  className="w-100 h-20 object-contain mb-1"
                 />
                 <span className="text-slate-600 text-sm">{tech.name}</span>
               </motion.div>

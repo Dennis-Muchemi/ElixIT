@@ -104,7 +104,7 @@ const ProjectCard = ({ id, projectId, title, category, image, description, stats
 
           <h3 className="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
           <p className="text-slate-600 mb-6">{description}</p>
-
+        {/*}
           <div className="flex gap-6 mb-6">
             {stats.map((stat: Stat, statIndex: number) => (
               <div 
@@ -121,7 +121,7 @@ const ProjectCard = ({ id, projectId, title, category, image, description, stats
               </div>
             ))}
           </div>
-
+          */}
           <div>
             <span 
               className="inline-flex items-center text-teal-500 hover:text-teal-600 font-medium group/link cursor-pointer"
