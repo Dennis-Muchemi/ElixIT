@@ -16,27 +16,11 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Thompson",
+    name: "Mary Nduta",
     role: "CEO",
-    company: "InnovateTech",
-    image: "/testimonials/sarah.jpg",
-    quote: "Working with ElixIT has been transformative for our business. Their attention to detail and innovative solutions helped us achieve our digital goals."
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Director of Digital",
-    company: "GlobalCorp",
-    image: "/testimonials/michael.jpg",
-    quote: "The team at ElixIT brings both technical expertise and creative excellence to every project. They're true partners in our digital journey."
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "Marketing Manager",
-    company: "FutureScale",
-    image: "/testimonials/emily.jpg",
-    quote: "Their commitment to quality and client satisfaction is unmatched. ElixIT delivered beyond our expectations."
+    company: "Bryma Properties",
+    image: "/common/woman_avatar.jpg",
+    quote: "ElixIT transformed our online presence completely. I loved their services and the results were phenomenal."
   }
 ]
 

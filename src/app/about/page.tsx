@@ -16,8 +16,10 @@ export default function AboutPage() {
       <AboutHero />
       <MissionVision />
       <CompanyValues />
+      {/*}
       <TeamSection />
       <Timeline />
+      */}
       <TechStack />
       <Testimonials />
       <Footer />

@@ -214,7 +214,7 @@ const testimonials = [
     content: "ElixIT transformed our online presence completely. I loved their services and the results were phenomenal.",
     name: "Mary Nduta",
     position: "CEO - Bryma Properties",
-    avatar: "/api/placeholder/100/100"
+    avatar: "/common/woman_avatar.jpg"
   }
 ];
 

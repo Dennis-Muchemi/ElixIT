@@ -6,28 +6,28 @@ const technologies = [
   {
     category: 'Frontend',
     techs: [
-      { name: 'React', icon: '/icons/react.svg' },
-      { name: 'Next.js', icon: '/icons/nextjs.svg' },
-      { name: 'TypeScript', icon: '/icons/typescript.svg' },
-      { name: 'Tailwind CSS', icon: '/icons/tailwind.svg' }
+      { name: 'React', icon: '/common/react_3.png' },
+      { name: 'Next.js', icon: '/common/next_1.png' },
+      { name: 'TypeScript', icon: '/common/typescript.jpg' },
+      { name: 'Tailwind CSS', icon: '/common/tailwind_css.png' }
     ]
   },
   {
     category: 'Backend',
     techs: [
-      { name: 'Node.js', icon: '/icons/nodejs.svg' },
-      { name: 'Python', icon: '/icons/python.svg' },
-      { name: 'PostgreSQL', icon: '/icons/postgresql.svg' },
-      { name: 'MongoDB', icon: '/icons/mongodb.svg' }
+      { name: 'Node.js', icon: '/common/node.svg' },
+      { name: 'Python', icon: '/common/python.webp' },
+      { name: 'PostgreSQL', icon: '/common/postgresql-logo.png' },
+      { name: 'MongoDB', icon: '/common/mongoDB.webp' }
     ]
   },
   {
     category: 'Tools & Services',
     techs: [
-      { name: 'AWS', icon: '/icons/aws.svg' },
-      { name: 'Docker', icon: '/icons/docker.svg' },
-      { name: 'Git', icon: '/icons/git.svg' },
-      { name: 'Figma', icon: '/icons/figma.svg' }
+      { name: 'AWS', icon: '/common/aws.png' },
+      { name: 'Docker', icon: '/common/docker_2.webp' },
+      { name: 'Git', icon: '/common/git.png' },
+      { name: 'Figma', icon: '/common/figma.png' }
     ]
   }
 ]

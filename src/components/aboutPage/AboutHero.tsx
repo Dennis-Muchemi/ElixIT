@@ -38,7 +38,7 @@ export function AboutHero() {
         >
           <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="/images/team-collaboration.jpg" // You'll need to add this image
+              src="/common/elixit_about.jpg" // You'll need to add this image
               alt="Team Collaboration"
               className="object-cover w-full h-full"
             />
